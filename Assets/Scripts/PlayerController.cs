@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header ("Rotation")]
 
     private float m_Yaw;
     private float m_Pitch;
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public bool m_UseInvertedYaw;
     public bool m_UseInvertedPitch;
 
+    [Header("Movement")]
+
     public CharacterController m_CharacterController;
 
     private float m_VerticalSpeed;
@@ -28,27 +31,16 @@ public class PlayerController : MonoBehaviour
     public float m_SpeedMultiplier;
     public float m_JumpSpeed;
 
-
     public float m_GravityMultiplier;
-    private float m_CurrentGravityMultiplier;
 
     private bool m_AngleLocked = false;
 
+    [Header ("Camera")]
+
     public Camera m_Camera;
 
-
-
-
-
-    [Header("Health")]
-    public int m_InitialHP = 100;
-    public int m_CurrentHP { get; private set; }
-    public int m_InitialShield = 50;
-    public int m_CurrentShield { get; private set; }
-
-    [Header("Shoot")]
-
     [Header("Input")]
+
     public KeyCode m_LeftKeyCode = KeyCode.A;
     public KeyCode m_RightKeyCode = KeyCode.D;
     public KeyCode m_UpKeyCode = KeyCode.W;
@@ -58,18 +50,13 @@ public class PlayerController : MonoBehaviour
     public KeyCode m_ReloadKeyCode = KeyCode.R;
     public int m_ShootMouseButton = 0;
 
-    [Header("Animation")]
-
-
-
     [Header("Debug Input")]
     public KeyCode m_AngleLockedKeycode = KeyCode.I;
 
 
-
     private void Start()
     {
-        /* PlayerController l_Player = GameManager.GetGameManager().GetPlayer();
+        /* PlayerController l_Player = GameManager.GetGameManager().GetPlayer();     // evitar que es crein + players entre scenes
         if (l_Player != null)
         {
             l_Player.m_CharacterController.enabled = false;
@@ -87,12 +74,11 @@ public class PlayerController : MonoBehaviour
         // m_RespawnPosition = transform.position;
         // m_StartRotation = transform.rotation;
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject); 
+
         // GameManager.GetGameManager().SetPlayer(this);
 
         Cursor.lockState = CursorLockMode.Locked;
-
-
     }
 
     private void Update()
@@ -100,7 +86,7 @@ public class PlayerController : MonoBehaviour
         float l_MouseX = Input.GetAxis("Mouse X");
         float l_MouseY = Input.GetAxis("Mouse Y");
 
-        if (Input.GetKeyDown(m_AngleLockedKeycode))
+        if (Input.GetKeyDown(m_AngleLockedKeycode)) // bloqueig de camera
             m_AngleLocked = !m_AngleLocked;
 
         if (!m_AngleLocked)
@@ -117,14 +103,14 @@ public class PlayerController : MonoBehaviour
 
         Vector3 l_Movement = Vector3.zero;
 
-        float l_YawPiRadians = m_Yaw * Mathf.Deg2Rad;
-        float l_Yaw90PiRadians = (m_Yaw + 90) * Mathf.Deg2Rad;
+        //float l_YawPiRadians = m_Yaw * Mathf.Deg2Rad;
+        //float l_Yaw90PiRadians = (m_Yaw + 90) * Mathf.Deg2Rad;
 
-        Vector3 l_ForwardDirection = new Vector3(Mathf.Sin(l_YawPiRadians), 0.0f, Mathf.Cos(l_YawPiRadians));
-        Vector3 l_RightDirection = new Vector3(Mathf.Sin(l_Yaw90PiRadians), 0.0f, Mathf.Cos(l_Yaw90PiRadians));
+        //Vector3 l_ForwardDirection = new Vector3(Mathf.Sin(l_YawPiRadians), 0.0f, Mathf.Cos(l_YawPiRadians));
+        //Vector3 l_RightDirection = new Vector3(Mathf.Sin(l_Yaw90PiRadians), 0.0f, Mathf.Cos(l_Yaw90PiRadians));
 
-        //Vector3 l_ForwardDirection = transform.forward; 
-        //Vector3 l_RightDirection = transform.right;
+        Vector3 l_ForwardDirection = transform.forward; 
+        Vector3 l_RightDirection = transform.right;
 
         if (Input.GetKey(m_RightKeyCode))
             l_Movement = l_RightDirection;
@@ -143,8 +129,7 @@ public class PlayerController : MonoBehaviour
         l_Movement.Normalize();
         l_Movement *= m_Speed * l_SpeedMultiplier * Time.deltaTime;
 
-        // ManageGravity();
-        m_VerticalSpeed = m_VerticalSpeed + Physics.gravity.y * m_CurrentGravityMultiplier * Time.deltaTime;
+        m_VerticalSpeed = m_VerticalSpeed + Physics.gravity.y * m_GravityMultiplier * Time.deltaTime;
         l_Movement.y = m_VerticalSpeed * Time.deltaTime;
 
         CollisionFlags l_CollisionFlags = m_CharacterController.Move(l_Movement);
@@ -158,11 +143,9 @@ public class PlayerController : MonoBehaviour
             m_VerticalSpeed = 0.0f;
         }
 
-
         if (Input.GetKeyDown(m_JumpKeyCode))
         {
             m_VerticalSpeed = m_JumpSpeed;
         }
-
     }
 }

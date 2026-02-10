@@ -248,8 +248,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d6dd77a68fa084c8b0aefdc076e543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  m_YawSpeed: 300
-  m_PitchSpeed: 300
+  m_YawSpeed: 100
+  m_PitchSpeed: 100
   m_MinPitch: -30
   m_MaxPitch: 30
   m_PitchController: {fileID: 2022167384}
@@ -258,11 +258,9 @@ MonoBehaviour:
   m_CharacterController: {fileID: 108686249}
   m_Speed: 2
   m_SpeedMultiplier: 2
-  m_JumpSpeed: 2
-  m_GravityMultiplier: 2
+  m_JumpSpeed: 5
+  m_GravityMultiplier: 1
   m_Camera: {fileID: 1712395905}
-  m_InitialHP: 100
-  m_InitialShield: 50
   m_LeftKeyCode: 97
   m_RightKeyCode: 100
   m_UpKeyCode: 119
