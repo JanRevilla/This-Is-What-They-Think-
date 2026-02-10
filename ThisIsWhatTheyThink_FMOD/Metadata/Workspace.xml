@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="Workspace" id="{8099ad7d-92e7-4655-8cd2-82e295ea1c6f}">
+		<property name="builtBanksOutputDirectory">
+			<value>../../../../../../../MAIN/github/LTG/Lideratge/Assets/FMOD</value>
+		</property>
+		<relationship name="masterEventFolder">
+			<destination>{712b293a-51bc-4d7c-81a0-b51aa8304b6c}</destination>
+		</relationship>
+		<relationship name="masterTagFolder">
+			<destination>{a9270443-2685-42c2-a2f4-b0e75d59f281}</destination>
+		</relationship>
+		<relationship name="masterEffectPresetFolder">
+			<destination>{9e1f84f4-8c51-40f0-a7cd-787957f90e97}</destination>
+		</relationship>
+		<relationship name="masterParameterPresetFolder">
+			<destination>{dd7179ad-d5fd-4e7f-afae-a4ed463b78f6}</destination>
+		</relationship>
+		<relationship name="masterBankFolder">
+			<destination>{6d92ece5-ad6a-438e-9c91-1a2c9b95ddd0}</destination>
+		</relationship>
+		<relationship name="masterSandboxFolder">
+			<destination>{35ab4cf4-2ae5-4844-a0de-a92545376eb3}</destination>
+		</relationship>
+		<relationship name="masterAssetFolder">
+			<destination>{1fbaee09-3fd0-4537-887b-155257a323b3}</destination>
+		</relationship>
+		<relationship name="mixer">
+			<destination>{ab1cf5bf-7f2c-4c70-883c-d8c5f9697240}</destination>
+		</relationship>
+		<relationship name="profilerSessionFolder">
+			<destination>{47898767-238c-4b34-9710-1a848bed5095}</destination>
+		</relationship>
+		<relationship name="platforms">
+			<destination>{8ecfa8ae-8f5e-458d-ade6-d9eabbb4878b}</destination>
+		</relationship>
+	</object>
+</objects>
