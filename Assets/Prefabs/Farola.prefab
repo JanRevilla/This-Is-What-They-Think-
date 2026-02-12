@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 722489405520098499}
   - component: {fileID: 3280268319578963572}
   m_Layer: 0
-  m_Name: Point Light
+  m_Name: Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 8651234558433183685}
   - component: {fileID: 6931727724647824922}
   m_Layer: 0
-  m_Name: Point Light (8)
+  m_Name: Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1571,7 +1571,9 @@ MonoBehaviour:
   LightsOn: 1
   MaxLight: 1.327805
   MaxSpotLight: 104.6128
-  Speed: 0.5
+  MaxLowLight: 152.5728
+  MaxUpperLight: 4177.042
+  FadeDuration: 3
 --- !u!65 &3122226937446484817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2325,7 +2327,7 @@ GameObject:
   - component: {fileID: 6398887561697670505}
   - component: {fileID: 819242419778649620}
   m_Layer: 0
-  m_Name: Point Light (9)
+  m_Name: Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2565,7 +2567,7 @@ GameObject:
   - component: {fileID: 4139825479798413854}
   - component: {fileID: 2906012013467385577}
   m_Layer: 0
-  m_Name: Point Light (7)
+  m_Name: Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

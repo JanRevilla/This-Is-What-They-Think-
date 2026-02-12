@@ -73,7 +73,7 @@ public class CameraController : MonoBehaviour
         if (l_Speed > 0.5f && m_CharacterController.isGrounded)
         {
             m_BobTimer += Time.deltaTime * (m_BobFrequency * (l_Speed/m_PlayerController.m_MaxSpeed));
-            Debug.Log(m_BobTimer);
+            
 
             float posX = m_CameraStartPos.x + Mathf.Sin(m_BobTimer * 0.5f) * m_BobAmplitude;
             float posY = m_CameraStartPos.y + Mathf.Sin(m_BobTimer) * m_BobAmplitude;
