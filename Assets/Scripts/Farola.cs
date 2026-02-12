@@ -1,139 +1,85 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Farola : MonoBehaviour
 {
-    [Header("Elements")]
-    public Light[] Lights;
-    private BoxCollider Trigger;
-    public Farola NextFarola;
+    [Header("Configuración")]
+    public bool lightsOn = false;
+    public Farola nextFarola;
+    public float fadeDuration = 2f;
 
-    [Header("Atributos")]
-    private bool ActivatingLights = false;
-    private bool DesactivatingLights = false;
-    public bool LightsOn;
-
-    public float MaxLight = 1.327805f;
-    public float MaxSpotLight = 104.6128f;
-    public float MaxLowLight = 152.5728f;
-    public float MaxUpperLight = 417.042f;
-
-    [Header("Timing")]
-    public float FadeDuration = 3f;
+    [Header("Estado Interno")]
+    private Light[] lights;
+    private Dictionary<Light, float> baseIntensities = new Dictionary<Light, float>();
     private float fadeTimer = 0f;
+    private bool isFading = false;
+    private float targetWeight = 0f;
+    private float startWeight = 0f;
 
-    void Start()
+    void Awake()
     {
-        Trigger = GetComponent<BoxCollider>();
+        lights = GetComponentsInChildren<Light>();
 
-        if (!LightsOn)
+        foreach (Light l in lights)
         {
-            foreach (var b in Lights)
-            {
-                b.intensity = 0;
-            }
+            baseIntensities[l] = l.intensity;
+
+            if (!lightsOn)
+                l.intensity = 0;
+            else
+                l.intensity = baseIntensities[l];
         }
     }
 
     void Update()
     {
-        if (ActivatingLights)
+        if (!isFading) return;
+
+        fadeTimer += Time.deltaTime;
+        float t = Mathf.Clamp01(fadeTimer / fadeDuration);
+
+        float lerpVal = Mathf.SmoothStep(startWeight, targetWeight, t);
+
+        foreach (Light l in lights)
         {
-            fadeTimer += Time.deltaTime;
-            float t = Mathf.Clamp01(fadeTimer / FadeDuration);
-
-            foreach (var b in Lights)
-            {
-                if (b.name == "SpotLight")
-                {
-                    b.intensity = Mathf.Lerp(0, MaxSpotLight, t);
-                }
-                else if (b.name == "Upper")
-                {
-                    b.intensity = Mathf.Lerp(0, MaxUpperLight, t);
-                }
-                else if (b.name == "Low")
-                {
-                    b.intensity = Mathf.Lerp(0, MaxLowLight, t);
-                }
-                else
-                {
-                    b.intensity = Mathf.Lerp(0, MaxLight, t);
-                }    
-            }
-
-            if (fadeTimer >= FadeDuration)
-            {
-                ActivatingLights = false;
-                LightsOn = true;
-                fadeTimer = 0f;
-            }
+            l.intensity = baseIntensities[l] * lerpVal;
         }
 
-        if (DesactivatingLights)
+        if (fadeTimer >= fadeDuration)
         {
-            fadeTimer += Time.deltaTime;
-            float t = fadeTimer / FadeDuration;
-
-            foreach (var b in Lights)
-            {
-                if (b.name == "SpotLight")
-                {
-                    b.intensity = Mathf.Lerp(MaxSpotLight, 0, t);
-                }
-                else if (b.name == "Low")
-                {
-                    b.intensity = Mathf.Lerp(MaxLowLight, 0, t);
-                }
-                else if (b.name == "Upper")
-                {
-                    b.intensity = Mathf.Lerp(MaxUpperLight, 0, t);
-                }
-                else
-                {
-                    b.intensity = Mathf.Lerp(MaxLight, 0, t);
-                }
-            }
-
-            if (fadeTimer >= FadeDuration)
-            {
-                DesactivatingLights = false;
-                LightsOn = false;
-                fadeTimer = 0f;
-            }
+            isFading = false;
+            lightsOn = (targetWeight > 0);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (NextFarola != null)
+        if (other.CompareTag("Player") && nextFarola != null)
         {
-            NextFarola.ActivateLights();
+            nextFarola.SetLights(true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (NextFarola != null)
+        if (other.CompareTag("Player") && nextFarola != null)
         {
-            NextFarola.NoLights();
+            nextFarola.SetLights(false);
         }
     }
 
-    public void ActivateLights()
+    public void SetLights(bool turnOn)
     {
-        if (LightsOn) return;
+        if (turnOn == lightsOn && !isFading) return;
 
-        DesactivatingLights = false;
+        isFading = true;
         fadeTimer = 0f;
-        ActivatingLights = true;
-    }
 
-    public void NoLights()
-    {
-        if (!LightsOn) return;
+        if (lights.Length > 0 && baseIntensities[lights[0]] > 0)
+            startWeight = lights[0].intensity / baseIntensities[lights[0]];
+        else
+            startWeight = turnOn ? 0f : 1f;
 
-        ActivatingLights = false;
-        fadeTimer = 0f;
-        DesactivatingLights = true;
+        targetWeight = turnOn ? 1f : 0f;
     }
 }

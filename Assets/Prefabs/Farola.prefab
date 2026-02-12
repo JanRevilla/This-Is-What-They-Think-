@@ -284,7 +284,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 332.39847
+  m_Intensity: 103.45071
   m_Range: 0.81
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -507,7 +507,7 @@ Transform:
   m_GameObject: {fileID: 1217508661944267155}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.0012134783, y: 0.030812278, z: 0.03976639}
+  m_LocalPosition: {x: -0.0012134783, y: 0.0308, z: 0.0651}
   m_LocalScale: {x: 0.032427333, y: 0.032427333, z: 0.032427333}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -524,7 +524,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 12.141354
+  m_Intensity: 2.387324
   m_Range: 9.94
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -764,10 +764,10 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 101.5557
+  m_Intensity: 14.99609
   m_Range: 5.0920954
-  m_SpotAngle: 66.54848
-  m_InnerSpotAngle: 37.182423
+  m_SpotAngle: 150.20587
+  m_InnerSpotAngle: 120.83984
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
     m_Type: 1
@@ -813,7 +813,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShadowRadius: 0.025
   m_ShadowAngle: 0
   m_LightUnit: 0
   m_LuxAtDistance: 1
@@ -1451,8 +1451,8 @@ GameObject:
   - component: {fileID: 4158766834763643225}
   - component: {fileID: 4712233776800846928}
   - component: {fileID: 4770702302050058393}
-  - component: {fileID: 1256165001591304622}
   - component: {fileID: 3122226937446484817}
+  - component: {fileID: 5131727992038238434}
   m_Layer: 0
   m_Name: Farola
   m_TagString: Untagged
@@ -1543,37 +1543,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1256165001591304622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3467779135081018519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9491b7cbc77264d41874ff6359cdeed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Farola
-  Lights:
-  - {fileID: 722489405520098499}
-  - {fileID: 3712391112740693528}
-  - {fileID: 4139825479798413854}
-  - {fileID: 491824958340749489}
-  - {fileID: 2383670951440222029}
-  - {fileID: 8651234558433183685}
-  - {fileID: 8253394467141985526}
-  - {fileID: 7174602258875749612}
-  - {fileID: 6398887561697670505}
-  - {fileID: 8030291588123875951}
-  - {fileID: 8905029795931490295}
-  NextFarola: {fileID: 0}
-  LightsOn: 1
-  MaxLight: 1.327805
-  MaxSpotLight: 104.6128
-  MaxLowLight: 152.5728
-  MaxUpperLight: 4177.042
-  FadeDuration: 3
 --- !u!65 &3122226937446484817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1595,6 +1564,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.24831912, y: 0.20725934, z: 0.11764524}
   m_Center: {x: -0.01609043, y: -0.009218583, z: 0.056822605}
+--- !u!114 &5131727992038238434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467779135081018519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8376f89216dff604096513d314c26824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Farola2
+  lightsOn: 1
+  nextFarola: {fileID: 0}
+  fadeDuration: 2
 --- !u!1 &4687786671618390703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2342,7 +2326,7 @@ Transform:
   m_GameObject: {fileID: 8459671940874700539}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.02998162, y: -0.010240732, z: 0.03976638}
+  m_LocalPosition: {x: 0.02998162, y: -0.0103, z: 0.0651}
   m_LocalScale: {x: 0.032427333, y: 0.032427333, z: 0.032427333}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2359,7 +2343,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 12.141354
+  m_Intensity: 2.387324
   m_Range: 9.94
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2582,7 +2566,7 @@ Transform:
   m_GameObject: {fileID: 8690618784913520528}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.026636505, y: -0.01708291, z: 0.039766375}
+  m_LocalPosition: {x: -0.026636505, y: -0.0171, z: 0.0651}
   m_LocalScale: {x: 0.032427333, y: 0.032427333, z: 0.032427333}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2599,7 +2583,7 @@ Light:
   serializedVersion: 12
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 12.141354
+  m_Intensity: 2.387324
   m_Range: 9.94
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
