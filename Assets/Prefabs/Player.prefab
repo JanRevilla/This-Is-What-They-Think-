@@ -129,28 +129,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d6dd77a68fa084c8b0aefdc076e543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  m_YawSpeed: 100
-  m_PitchSpeed: 100
-  m_MinPitch: -30
-  m_MaxPitch: 30
-  m_PitchController: {fileID: 7290822768748969666}
-  m_UseInvertedYaw: 0
-  m_UseInvertedPitch: 1
   m_CharacterController: {fileID: 4379688503978527387}
-  m_Speed: 2
-  m_SpeedMultiplier: 2
+  m_MaxSpeed: 2.5
+  m_RunMultiplier: 2
+  m_Acceleration: 5
+  m_Deceleration: 6
   m_JumpSpeed: 5
   m_GravityMultiplier: 1
-  m_Camera: {fileID: 1589534574268301504}
-  m_LeftKeyCode: 97
-  m_RightKeyCode: 100
-  m_UpKeyCode: 119
-  m_DownKeyCode: 115
-  m_JumpKeyCode: 32
   m_RunKeyCode: 304
-  m_ReloadKeyCode: 114
-  m_ShootMouseButton: 0
-  m_AngleLockedKeycode: 105
 --- !u!143 &4379688503978527387
 CharacterController:
   m_ObjectHideFlags: 0
@@ -187,6 +173,7 @@ GameObject:
   - component: {fileID: 5554936229069051103}
   - component: {fileID: 1589534574268301504}
   - component: {fileID: 8961195063469441302}
+  - component: {fileID: 4880098871581607373}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -399,6 +386,31 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!114 &4880098871581607373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4170501666409864650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a632226a7e1d5c74293a032044b40a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraCameraController
+  m_PlayerBody: {fileID: 3368464352008632064}
+  m_PitchController: {fileID: 7290822768748969666}
+  m_PlayerController: {fileID: 1865927528991181245}
+  m_YawSpeed: 150
+  m_PitchSpeed: 150
+  m_MinPitch: -80
+  m_MaxPitch: 80
+  m_UseInvertedYaw: 0
+  m_UseInvertedPitch: 1
+  m_AngleLockedKeycode: 105
+  m_UseBobbing: 1
+  m_BobAmplitude: 0.05
+  m_BobFrequency: 10
 --- !u!1 &5984502682030762758
 GameObject:
   m_ObjectHideFlags: 0
