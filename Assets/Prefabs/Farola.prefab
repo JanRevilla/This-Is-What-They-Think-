@@ -1451,6 +1451,8 @@ GameObject:
   - component: {fileID: 4158766834763643225}
   - component: {fileID: 4712233776800846928}
   - component: {fileID: 4770702302050058393}
+  - component: {fileID: 1256165001591304622}
+  - component: {fileID: 3122226937446484817}
   m_Layer: 0
   m_Name: Farola
   m_TagString: Untagged
@@ -1471,7 +1473,6 @@ Transform:
   m_LocalScale: {x: 30.838182, y: 30.838182, z: 30.838182}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1542485187759905255}
   - {fileID: 3664140329173110249}
   - {fileID: 5193796710977937151}
   - {fileID: 5858439319684351803}
@@ -1542,6 +1543,56 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1256165001591304622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467779135081018519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9491b7cbc77264d41874ff6359cdeed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Farola
+  Lights:
+  - {fileID: 722489405520098499}
+  - {fileID: 3712391112740693528}
+  - {fileID: 4139825479798413854}
+  - {fileID: 491824958340749489}
+  - {fileID: 2383670951440222029}
+  - {fileID: 8651234558433183685}
+  - {fileID: 8253394467141985526}
+  - {fileID: 7174602258875749612}
+  - {fileID: 6398887561697670505}
+  - {fileID: 8030291588123875951}
+  - {fileID: 8905029795931490295}
+  NextFarola: {fileID: 0}
+  LightsOn: 1
+  MaxLight: 1.327805
+  MaxSpotLight: 104.6128
+  Speed: 0.5
+--- !u!65 &3122226937446484817
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467779135081018519}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.24831912, y: 0.20725934, z: 0.11764524}
+  m_Center: {x: -0.01609043, y: -0.009218583, z: 0.056822605}
 --- !u!1 &4687786671618390703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1782,59 +1833,6 @@ MonoBehaviour:
   m_ObsoleteUseShadowQualitySettings: 0
   m_ObsoleteCustomShadowResolution: 512
   m_ObsoleteContactShadows: 0
---- !u!1 &4784443947998700323
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1542485187759905255}
-  - component: {fileID: 8872645290329714781}
-  m_Layer: 0
-  m_Name: Trigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1542485187759905255
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4784443947998700323}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.0152, y: 0.0042, z: 0.0817}
-  m_LocalScale: {x: 0.2756537, y: 0.27565372, z: 0.27565372}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4158766834763643225}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8872645290329714781
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4784443947998700323}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6123276435531744370
 GameObject:
   m_ObjectHideFlags: 0
