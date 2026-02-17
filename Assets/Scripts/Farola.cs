@@ -62,10 +62,10 @@ public class Farola : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && nextFarola != null)
-        {
-            nextFarola.SetLights(false);
-        }
+        //if (other.CompareTag("Player") && nextFarola != null)
+        //{
+        //    nextFarola.SetLights(false);
+        //}
     }
 
     public void SetLights(bool turnOn)
