@@ -7,6 +7,7 @@ public class Farola : MonoBehaviour
     public bool lightsOn = false;
     public Farola[] nextFarola;
     public float fadeDuration = 2f;
+    public bool TurnOff = false;
 
     [Header("Estado Interno")]
     private Light[] lights;
@@ -54,7 +55,7 @@ public class Farola : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && nextFarola != null)
+        if (other.CompareTag("Player") && nextFarola[0] != null)
         {
             foreach (var b in nextFarola)
             {
@@ -65,10 +66,13 @@ public class Farola : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //if (other.CompareTag("Player") && nextFarola != null)
-        //{
-        //    nextFarola.SetLights(false);
-        //}
+        if (other.CompareTag("Player") && nextFarola[0] != null && TurnOff)
+        {
+            foreach (var b in nextFarola)
+            {
+                b.SetLights(false);
+            }
+        }
     }
 
     public void SetLights(bool turnOn)
