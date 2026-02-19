@@ -12,11 +12,10 @@ public enum PickableObject
 
 public enum NameOfPickableObject
 {
-    Piece_1 = 0,
-    Piece_2,
-    Piece_3,
-    Piece_4,
-    Piece_5
+    Humano = 0,
+    Coche,
+    Paraguas,
+    Pato
 }
 
 public class PickUp : MonoBehaviour
@@ -59,9 +58,10 @@ public class PickUp : MonoBehaviour
 
     void PickUpObject()
     {
-        if (GetComponent<Collider>().enabled)
+        if (GetComponent<MeshCollider>().enabled)
         {
-            GetComponent<Collider>().enabled = false;
+            GetComponent<MeshCollider>().enabled = false;
+            GetComponent<SphereCollider>().enabled = false;
         }
 
         _canMove = true;
@@ -95,7 +95,8 @@ public class PickUp : MonoBehaviour
             {
                 _pickableObject = PickableObject.OnGround;
                 _itsFalling = false;
-                GetComponent<Collider>().enabled = true;
+                GetComponent<MeshCollider>().enabled = true;
+                GetComponent<SphereCollider>().enabled = true;
             }
         }
     }
@@ -115,6 +116,7 @@ public class PickUp : MonoBehaviour
             {
                 if (!Physics.Raycast(transform.position, _target.transform.position - transform.position, out RaycastHit hit))
                 {
+                    Debug.Log("Entra");
                     if (hit.collider == null)
                         PickUpObject();
                 }

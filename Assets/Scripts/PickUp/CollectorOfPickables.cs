@@ -19,6 +19,7 @@ public class CollectorOfPickables : MonoBehaviour
     private List<Transform> _positionPoints = new();
 
     int _numOfPositionInList = 0;
+    int _numOfPieces = 0;
 
     void Start()
     {
@@ -31,15 +32,29 @@ public class CollectorOfPickables : MonoBehaviour
         {
             AttachPickableObject();
         }
+
+        if (_numOfPieces == _positionPoints.Count)
+            ActiveFarola();
+    }
+
+    void ActiveFarola()
+    {
+
     }
 
     private void AttachPickableObject()
     {
         if (_pickableObject.transform.parent == _target.transform)
+            _pickableObject.transform.parent =transform;
+
+        if(_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject() > 1)
         {
-            _pickableObject.transform.parent =(transform);
-            Debug.Log("Entra");
+            _pickableObject.transform.localRotation = Quaternion.Euler(Vector3.right.x, Vector3.up.y, -1 * transform.localRotation.eulerAngles.z);
+            Debug.Log(_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject());
         }
+        else
+            _pickableObject.transform.localRotation = Quaternion.Euler(Vector3.left.x * 180, 0, -1 * transform.localRotation.eulerAngles.z);
+
 
         _pickableObject.transform.position += (_positionPoints[_numOfPositionInList].position - _pickableObject.transform.position).normalized * _speed * Time.deltaTime;
 
@@ -48,6 +63,7 @@ public class CollectorOfPickables : MonoBehaviour
             _pickableObject.transform.position = _positionPoints[_numOfPositionInList].position;
             _canAttach = false;
             _pickableObject.GetComponent<PickUp>().SetPickableObject(PickableObject.OnSite);
+            ++_numOfPieces;
         }
     }
 

@@ -3212,8 +3212,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 95697811}
-  - {fileID: 789504635}
   - {fileID: 1537794621}
+  - {fileID: 789504635}
   - {fileID: 106296661}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -176.686, y: 0, z: -90}
@@ -3428,7 +3428,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.37517458, y: 0.029548446, z: 0.062178902, w: 0.92439425}
   m_LocalPosition: {x: 8.05, y: 0.607, z: 141.509}
-  m_LocalScale: {x: 23.61355, y: 19.500378, z: 16.78874}
+  m_LocalScale: {x: 30.2, y: 24.8, z: 16.78874}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3538,7 +3538,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.49159998, y: -0.5082612, z: -0.49159998, w: 0.5082612}
   m_LocalPosition: {x: 13.786, y: -0.012, z: 135.28}
-  m_LocalScale: {x: 30.233555, y: 30.233555, z: 53.33937}
+  m_LocalScale: {x: 22.4, y: 23.3, z: 53.33937}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3698,7 +3698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   _speed: 3
   _distanceToStop: 0.05
-  _numOfPiece: 1
+  _numOfPiece: 2
 --- !u!135 &4048896833168351504
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3885,7 +3885,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.48343417, y: 0.51603425, z: -0.4834341, w: 0.51603454}
   m_LocalPosition: {x: 16.578, y: 0.23748785, z: 138.2}
-  m_LocalScale: {x: 23.282108, y: 23.282108, z: 69.59231}
+  m_LocalScale: {x: 25, y: 24.6, z: 69.59231}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3934,7 +3934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   _speed: 3
   _distanceToStop: 0.05
-  _numOfPiece: 2
+  _numOfPiece: 1
 --- !u!135 &7695839243323423966
 SphereCollider:
   m_ObjectHideFlags: 0
