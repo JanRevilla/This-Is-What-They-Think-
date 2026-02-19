@@ -5,7 +5,7 @@ public class Farola : MonoBehaviour
 {
     [Header("Configuración")]
     public bool lightsOn = false;
-    public Farola nextFarola;
+    public Farola[] nextFarola;
     public float fadeDuration = 2f;
 
     [Header("Estado Interno")]
@@ -56,7 +56,10 @@ public class Farola : MonoBehaviour
     {
         if (other.CompareTag("Player") && nextFarola != null)
         {
-            nextFarola.SetLights(true);
+            foreach (var b in nextFarola)
+            {
+                b.SetLights(true);
+            }
         }
     }
 

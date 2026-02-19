@@ -1453,6 +1453,7 @@ GameObject:
   - component: {fileID: 4770702302050058393}
   - component: {fileID: 3122226937446484817}
   - component: {fileID: 5131727992038238434}
+  - component: {fileID: 1879688995974369375}
   m_Layer: 0
   m_Name: Farola
   m_TagString: Untagged
@@ -1577,8 +1578,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Farola2
   lightsOn: 1
-  nextFarola: {fileID: 0}
+  nextFarola:
+  - {fileID: 0}
   fadeDuration: 2
+--- !u!64 &1879688995974369375
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467779135081018519}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3341752633814986369, guid: 918f728391099874b825c63aa69b2c9e, type: 3}
 --- !u!1 &4687786671618390703
 GameObject:
   m_ObjectHideFlags: 0
