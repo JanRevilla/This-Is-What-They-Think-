@@ -15,6 +15,9 @@ public class PlayerController : MonoBehaviour
     [Header("Input")]
     public KeyCode m_RunKeyCode = KeyCode.LeftShift;
 
+    [Header("Car Minigame")]
+    [SerializeField] private bool m_CarMinigame = false;
+
     private Vector3 m_CurrentHorizontalVelocity;
     private float m_VerticalSpeed;
 
@@ -38,8 +41,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D)) inputX = 1;
         else if (Input.GetKey(KeyCode.A)) inputX = -1;
 
-        if (Input.GetKey(KeyCode.W)) inputZ = 1;
-        else if (Input.GetKey(KeyCode.S)) inputZ = -1;
+        if (!m_CarMinigame)
+        {
+            if (Input.GetKey(KeyCode.W)) inputZ = 1;
+            else if (Input.GetKey(KeyCode.S)) inputZ = -1;
+        }
 
         Vector3 targetDirection = (transform.forward * inputZ + transform.right * inputX).normalized;
 
