@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Farola : MonoBehaviour
 {
@@ -16,6 +17,13 @@ public class Farola : MonoBehaviour
     private bool isFading = false;
     private float targetWeight = 0f;
     private float startWeight = 0f;
+
+    [Header("Audio")]
+    public bool m_IsFoco;
+    public AudioSource m_AudioSource;
+    public AudioClip m_LigthOnAudio;
+    public AudioClip m_LigthsIdleAudio;
+
 
     void Awake()
     {
@@ -88,5 +96,19 @@ public class Farola : MonoBehaviour
             startWeight = turnOn ? 0f : 1f;
 
         targetWeight = turnOn ? 1f : 0f;
+
+        StartCoroutine(AudioLigthsOnSecuence());
+    }
+
+    IEnumerator AudioLigthsOnSecuence()
+    {
+        m_AudioSource.clip = m_LigthOnAudio;
+        m_AudioSource.PlayOneShot(m_AudioSource.clip);
+
+        yield return new WaitForSeconds(m_LigthOnAudio.length);
+
+        m_AudioSource.clip = m_LigthsIdleAudio;
+        m_AudioSource.loop = true;
+        m_AudioSource.Play();
     }
 }

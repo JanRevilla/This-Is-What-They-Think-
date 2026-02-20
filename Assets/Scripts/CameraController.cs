@@ -89,11 +89,11 @@ public class CameraController : MonoBehaviour
 
             transform.localPosition = new Vector3(posX, posY, m_CameraStartPos.z);
 
-            //Debug.Log(m_BobTimer);
+            //Debug.Log(m_BobTimer); DEBUG
 
             if (l_waveValue < -0.95f && !m_StepsPlayed)
             {
-                Debug.Log("AUDIOOOO");
+                //Debug.Log("AUDIO PASOS"); DEBUG
                 PlayFootstep();
                 m_StepsPlayed = true; // Bloqueamos para que no suene en cada frame del fondo
             }
