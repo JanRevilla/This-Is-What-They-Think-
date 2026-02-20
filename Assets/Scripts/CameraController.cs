@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CameraController : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class CameraController : MonoBehaviour
     private Vector3 m_CameraStartPos;
     private float m_BobTimer;
 
+    [Header("Audio")]
+    public AudioClip[] m_AudioSteps;
+    public AudioSource m_audioSource;
+    private bool m_StepsPlayed;
+
     private void Start()
     {
         m_CharacterController = m_PlayerController.GetComponent<CharacterController>();
@@ -40,6 +46,8 @@ public class CameraController : MonoBehaviour
         float initialPitch = m_PitchController.localEulerAngles.x;
         if (initialPitch > 180) initialPitch -= 360;
         m_Pitch = initialPitch;
+
+        m_audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -73,17 +81,44 @@ public class CameraController : MonoBehaviour
         if (l_Speed > 0.5f && m_CharacterController.isGrounded)
         {
             m_BobTimer += Time.deltaTime * (m_BobFrequency * (l_Speed/m_PlayerController.m_MaxSpeed));
-            
+
+            float l_waveValue = Mathf.Sin(m_BobTimer);
 
             float posX = m_CameraStartPos.x + Mathf.Sin(m_BobTimer * 0.5f) * m_BobAmplitude;
             float posY = m_CameraStartPos.y + Mathf.Sin(m_BobTimer) * m_BobAmplitude;
 
             transform.localPosition = new Vector3(posX, posY, m_CameraStartPos.z);
+
+            //Debug.Log(m_BobTimer);
+
+            if (l_waveValue < -0.95f && !m_StepsPlayed)
+            {
+                Debug.Log("AUDIOOOO");
+                PlayFootstep();
+                m_StepsPlayed = true; // Bloqueamos para que no suene en cada frame del fondo
+            }
+            // Cuando la cabeza vuelve a subir, reseteamos el permiso para el próximo paso
+            else if (l_waveValue > 0.0f)
+            {
+                m_StepsPlayed = false;
+            }
         }
         else
         {
             //m_BobTimer = 0;
             transform.localPosition = Vector3.Lerp(transform.localPosition, m_CameraStartPos, Time.deltaTime * 10f);
         }
+    }
+
+    void PlayFootstep()
+    {
+        // Elegir un clip aleatorio de la lista
+        int indice = Random.Range(0, m_AudioSteps.Length);
+        m_audioSource.clip = m_AudioSteps[indice];
+
+        // Variar el pitch para que cada paso sea único
+        m_audioSource.pitch = Random.Range(0.75f, 1.10f);
+
+        m_audioSource.PlayOneShot(m_audioSource.clip);
     }
 }
