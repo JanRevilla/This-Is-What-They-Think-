@@ -7,6 +7,7 @@ TagManager:
   - Pickable
   - Pick Pivot
   - Ground
+  - Human
   layers:
   - Default
   - TransparentFX
