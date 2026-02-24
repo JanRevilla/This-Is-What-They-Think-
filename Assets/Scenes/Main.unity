@@ -1435,10 +1435,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Farola (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 3467779135081018519, guid: 10a0a80935c5da647b7491146641d273, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4158766834763643225, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.4324956
@@ -1483,6 +1479,14 @@ PrefabInstance:
       propertyPath: 'nextFarola.Array.data[0]'
       value: 
       objectReference: {fileID: 936567522}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: MaxDistance
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
