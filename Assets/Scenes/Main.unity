@@ -729,27 +729,27 @@ MonoBehaviour:
   m_menuCanvas: {fileID: 1367151287}
   PlayerController: {fileID: 1260624950298015189}
   CameraController: {fileID: 326647888}
-  m_transitionTime: 3
+  m_transitionTime: 4
   m_transitionCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.0044700257
+      outSlope: -0.0044700257
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.47388273
     - serializedVersion: 3
       time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0.9940376
+      inSlope: 0.011458313
+      outSlope: 0.011458313
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.19529897
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
