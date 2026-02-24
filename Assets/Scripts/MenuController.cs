@@ -13,8 +13,8 @@ public class MenuController : MonoBehaviour
     public GameObject m_menuCanvas;
 
     [Header("Scripts a Controlar")]
-    public MonoBehaviour PlayerController;
-    public MonoBehaviour CameraController;
+    public PlayerController PlayerController;
+    public CameraController CameraController;
 
     [Header("Configuración")]
     public float m_transitionTime = 2.5f;

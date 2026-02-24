@@ -683,6 +683,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1260624950298015188}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &326647888 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+  m_PrefabInstance: {fileID: 1260624950298015185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260624950298015186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a632226a7e1d5c74293a032044b40a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraCameraController
 --- !u!1 &376125082
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,11 +725,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MenuController
   m_mainCamera: {fileID: 1260624950298015191}
   m_menuPoint: {fileID: 1599553504}
-  m_cameraTarget: {fileID: 312887220}
+  m_cameraTarget: {fileID: 1260624950298015188}
   m_menuCanvas: {fileID: 1367151287}
   PlayerController: {fileID: 1260624950298015189}
-  CameraController: {fileID: 1260624950298015190}
-  m_transitionTime: 2.5
+  CameraController: {fileID: 326647888}
+  m_transitionTime: 3
   m_transitionCurve:
     serializedVersion: 2
     m_Curve:
@@ -5101,7 +5112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_audioSource
@@ -5263,17 +5274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d6dd77a68fa084c8b0aefdc076e543, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
---- !u!114 &1260624950298015190 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8961195063469441302, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
-  m_PrefabInstance: {fileID: 1260624950298015185}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260624950298015186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Runtime::UnityEngine.Rendering.HighDefinition.HDAdditionalCameraData
 --- !u!20 &1260624950298015191 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1589534574268301504, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
@@ -6159,6 +6159,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 376125084}
+  - {fileID: 189113984}
   - {fileID: 1367151291}
   - {fileID: 1978771855}
   - {fileID: 1599553504}
@@ -6187,4 +6188,3 @@ SceneRoots:
   - {fileID: 1614867243}
   - {fileID: 1121306162}
   - {fileID: 175157486}
-  - {fileID: 189113984}
