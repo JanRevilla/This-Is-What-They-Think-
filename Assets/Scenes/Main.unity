@@ -425,7 +425,7 @@ Transform:
   m_GameObject: {fileID: 95697810}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1055, y: -0.0803, z: 0.0797}
+  m_LocalPosition: {x: 0.1193, y: -0.0803, z: 0.0805}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -456,7 +456,7 @@ Transform:
   m_GameObject: {fileID: 106296660}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0427, y: -0.01, z: 0.0772}
+  m_LocalPosition: {x: 0.0551, y: -0.0141, z: 0.0809}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6747,7 +6747,7 @@ Transform:
   m_GameObject: {fileID: 1537794620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0427, y: -0.0817, z: 0.0772}
+  m_LocalPosition: {x: 0.0536, y: -0.0817, z: 0.0838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11777,7 +11777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   _speed: 3
-  _distanceToStop: 0.05
+  _distanceToStop: 0.25
   _numOfPiece: 3
 --- !u!135 &2883897262687443389
 SphereCollider:
@@ -12244,8 +12244,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.13842663, y: 0.14272733, z: 0.047072023}
-  m_Center: {x: 0.076556906, y: -0.044762045, z: 0.095048495}
+  m_Size: {x: 0.13842663, y: 0.14272733, z: 0.06836281}
+  m_Center: {x: 0.076556906, y: -0.044762045, z: 0.105693944}
 --- !u!114 &3469287838516334160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12262,8 +12262,8 @@ MonoBehaviour:
   _distanceToStop: 0.05
   _positionPoints:
   - {fileID: 95697811}
-  - {fileID: 789504635}
   - {fileID: 1537794621}
+  - {fileID: 789504635}
   - {fileID: 106296661}
 --- !u!4 &3544209834941730534
 Transform:
@@ -12631,7 +12631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   _speed: 3
-  _distanceToStop: 0.05
+  _distanceToStop: 0.25
   _numOfPiece: 2
 --- !u!135 &4048896833168351504
 SphereCollider:
@@ -14708,7 +14708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   _speed: 3
-  _distanceToStop: 0.05
+  _distanceToStop: 0.25
   _numOfPiece: 1
 --- !u!135 &7695839243323423966
 SphereCollider:
@@ -14795,7 +14795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
   _speed: 3
-  _distanceToStop: 0.05
+  _distanceToStop: 0.25
   _numOfPiece: 0
 --- !u!33 &7817219637097323694
 MeshFilter:
