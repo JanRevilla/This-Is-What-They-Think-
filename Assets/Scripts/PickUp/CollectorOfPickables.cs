@@ -21,6 +21,8 @@ public class CollectorOfPickables : MonoBehaviour
     int _numOfPositionInList = 0;
     int _numOfPieces = 0;
 
+    public Farola[] nextFarolas;
+    public Farola[] lastFarolas;
     void Start()
     {
         _target = GameObject.FindWithTag("Pick Pivot");
@@ -34,12 +36,21 @@ public class CollectorOfPickables : MonoBehaviour
         }
 
         if (_numOfPieces == _positionPoints.Count)
-            ActiveFarola();
+        {
+            SetFarolas();
+        }
     }
 
-    void ActiveFarola()
+    void SetFarolas()
     {
-
+        foreach (var f in nextFarolas)
+        {
+            f.SetLights(true);
+        }
+        foreach (var b in lastFarolas)
+        {
+            b.SetLights(false);
+        }
     }
 
     private void AttachPickableObject()
