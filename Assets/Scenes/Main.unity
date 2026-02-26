@@ -10785,6 +10785,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4170501666409864650, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: m_Name
+      value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170501666409864650, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -10833,6 +10837,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4170501666409864650, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1438534394}
+    - targetCorrespondingSourceObject: {fileID: 4170501666409864650, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1260624950298015197}
   m_SourcePrefab: {fileID: 100100000, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
 --- !u!1 &1260624950298015186 stripped
 GameObject:
@@ -10957,6 +10964,23 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 1589534574268301504, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
   m_PrefabInstance: {fileID: 1260624950298015185}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1260624950298015197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260624950298015186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca83adf531f20e5439736e15c3748aa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PostProcessing
+  m_Material: {fileID: 2100000, guid: 94efb36b06a65744eb8c8563ffeb73a8, type: 2}
+  m_UseRenderToTexture: 0
+  m_WidthSameAsFrameBuffer: 1
+  m_UseMipMap: 0
+  m_MaterialTextures: []
 --- !u!1 &1345131757686432930
 GameObject:
   m_ObjectHideFlags: 0
