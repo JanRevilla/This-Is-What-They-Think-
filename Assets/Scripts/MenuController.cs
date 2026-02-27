@@ -69,4 +69,10 @@ public class MenuController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Game Closed");
+    }
 }
