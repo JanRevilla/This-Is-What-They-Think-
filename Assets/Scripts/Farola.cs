@@ -34,9 +34,16 @@ public class Farola : MonoBehaviour
             baseIntensities[l] = l.intensity;
 
             if (!lightsOn)
+            {
                 l.intensity = 0;
+            }
             else
+            {
                 l.intensity = baseIntensities[l];
+                m_AudioSource.clip = m_LigthsIdleAudio;
+                m_AudioSource.loop = true;
+                m_AudioSource.Play();
+            }
         }
     }
 
