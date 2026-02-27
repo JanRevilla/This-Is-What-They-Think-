@@ -23,6 +23,7 @@ public class CollectorOfPickables : MonoBehaviour
 
     public Farola[] nextFarolas;
     public Farola[] lastFarolas;
+    bool IsFinished = false;
     void Start()
     {
         _target = GameObject.FindWithTag("Pick Pivot");
@@ -35,7 +36,7 @@ public class CollectorOfPickables : MonoBehaviour
             AttachPickableObject();
         }
 
-        if (_numOfPieces == _positionPoints.Count)
+        if (_numOfPieces == _positionPoints.Count && IsFinished == false)
         {
             SetFarolas();
         }
@@ -43,12 +44,16 @@ public class CollectorOfPickables : MonoBehaviour
 
     void SetFarolas()
     {
+        IsFinished = true;
+        Debug.Log("Farolaaaaaas");
         foreach (var f in nextFarolas)
         {
+            Debug.Log("Encender");
             f.SetLights(true);
         }
         foreach (var b in lastFarolas)
         {
+            Debug.Log("Apagar");
             b.SetLights(false);
         }
     }
