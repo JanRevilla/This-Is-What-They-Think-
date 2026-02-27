@@ -71,4 +71,13 @@ public class MovementSpawnElement : MonoBehaviour
         SetVariables();
         gameObject.SetActive(false);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            FinishPath();
+            Debug.Log("Entra");
+        }
+    }
 }
