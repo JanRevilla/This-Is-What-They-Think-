@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3826519838049034893}
   - component: {fileID: 1817556181163501018}
+  - component: {fileID: 4741189978464210890}
   m_Layer: 0
   m_Name: People
   m_TagString: Human
@@ -45,6 +46,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcdbe8abc8fad2642a5cda5ee5ae6f3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementSpawnElement
+--- !u!65 &4741189978464210890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7526989436551900740}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &9142336384104656584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63,15 +85,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 559217946567161523, guid: 62bd957e18a1b7f4bad0cb26b548a23e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.66933
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 559217946567161523, guid: 62bd957e18a1b7f4bad0cb26b548a23e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09733009
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 559217946567161523, guid: 62bd957e18a1b7f4bad0cb26b548a23e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.36323166
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 559217946567161523, guid: 62bd957e18a1b7f4bad0cb26b548a23e, type: 3}
       propertyPath: m_LocalRotation.w
