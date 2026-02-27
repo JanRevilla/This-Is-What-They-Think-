@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode m_RunKeyCode = KeyCode.LeftShift;
 
     [Header("Car Minigame")]
-    [SerializeField] private bool m_CarMinigame = false;
+    public bool m_CarMinigame = false;
 
     private Vector3 m_CurrentHorizontalVelocity;
     private float m_VerticalSpeed;

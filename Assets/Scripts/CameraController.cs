@@ -66,11 +66,16 @@ public class CameraController : MonoBehaviour
         float l_MouseX = Input.GetAxis("Mouse X");
         float l_MouseY = Input.GetAxis("Mouse Y");
 
-        m_Yaw += l_MouseX * m_YawSpeed * Time.deltaTime * (m_UseInvertedYaw ? -1.0f : 1.0f);
+        if (!m_PlayerController.m_CarMinigame)
+            m_Yaw += l_MouseX * m_YawSpeed * Time.deltaTime * (m_UseInvertedYaw ? -1.0f : 1.0f);
+
+        
         m_Pitch += l_MouseY * m_PitchSpeed * Time.deltaTime * (m_UseInvertedPitch ? -1.0f : 1.0f);
         m_Pitch = Mathf.Clamp(m_Pitch, m_MinPitch, m_MaxPitch);
 
-        m_PlayerBody.rotation = Quaternion.Euler(0.0f, m_Yaw, 0.0f);
+        if (!m_PlayerController.m_CarMinigame)
+            m_PlayerBody.rotation = Quaternion.Euler(0.0f, m_Yaw, 0.0f);
+
         m_PitchController.localRotation = Quaternion.Euler(m_Pitch, 0.0f, 0.0f);
     }
 
