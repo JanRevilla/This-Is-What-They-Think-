@@ -16,7 +16,7 @@ public class DialogsController : MonoBehaviour
     }
 
     
-public void PlayDialog(int dialogIndex)
+    public void PlayDialog(int dialogIndex)
     {
         if (dialogIndex < 0 || dialogIndex >= m_AudioDialogs.Length)
         {
