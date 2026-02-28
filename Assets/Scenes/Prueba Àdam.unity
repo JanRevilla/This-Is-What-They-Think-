@@ -10295,7 +10295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d61c11e3c0839843947821a41e1cf17, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: 1.804
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5d61c11e3c0839843947821a41e1cf17, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10337,6 +10337,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 8b037c0ce5e2a7e4c94fae304475e09a, type: 2}
+    - target: {fileID: -804731622281664130, guid: 5d61c11e3c0839843947821a41e1cf17, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -804731622281664130, guid: 5d61c11e3c0839843947821a41e1cf17, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
