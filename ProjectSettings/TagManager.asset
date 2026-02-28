@@ -8,6 +8,7 @@ TagManager:
   - Pick Pivot
   - Ground
   - Human
+  - WoodPiece
   layers:
   - Default
   - TransparentFX

@@ -24,6 +24,7 @@ public class CollectorOfPickables : MonoBehaviour
     public Farola[] nextFarolas;
     public Farola[] lastFarolas;
     bool IsFinished = false;
+    public AudioClip wood;
     void Start()
     {
         _target = GameObject.FindWithTag("Pick Pivot");
@@ -61,7 +62,9 @@ public class CollectorOfPickables : MonoBehaviour
     private void AttachPickableObject()
     {
         if (_pickableObject.transform.parent == _target.transform)
-            _pickableObject.transform.parent =transform;
+        {
+            _pickableObject.transform.parent = transform;
+        }
 
         if(_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject() > 1)
         {
@@ -80,6 +83,10 @@ public class CollectorOfPickables : MonoBehaviour
             _canAttach = false;
             _pickableObject.GetComponent<PickUp>().SetPickableObject(PickableObject.OnSite);
             ++_numOfPieces;
+            if (_pickableObject.tag == "WoodPiece")
+            {
+                GetComponent<AudioSource>().PlayOneShot(wood);
+            }
         }
     }
 
