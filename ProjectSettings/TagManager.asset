@@ -11,6 +11,7 @@ TagManager:
   - WoodPiece
   - RespawnB
   - Wall
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX
