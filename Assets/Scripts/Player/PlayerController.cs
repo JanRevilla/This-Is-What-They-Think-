@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
 
     //-----------------------------SCENE CONTROLLER------------------------------//
-    void OnEnable()
+    /*void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -108,5 +108,5 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogWarning("No scene found!!!");
         }
-    }
+    }*/
 }
