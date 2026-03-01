@@ -109,17 +109,11 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.DrawRay(transform.position, _target.transform.position - transform.position, Color.red);
         if (other.tag == "Player" && Input.GetKey(KeyCode.Mouse0) && _pickableObject == PickableObject.OnGround)
         {
             if(_target.transform.childCount == 0)
             {
-                if (!Physics.Raycast(transform.position, _target.transform.position - transform.position, out RaycastHit hit))
-                {
-                    Debug.Log("Entra");
-                    if (hit.collider == null)
-                        PickUpObject();
-                }
+                PickUpObject();
             }
         }
     }
