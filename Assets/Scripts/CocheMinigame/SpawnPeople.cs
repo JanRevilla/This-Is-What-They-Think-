@@ -81,7 +81,6 @@ public class SpawnPeople : MonoBehaviour
     public void IncreaseActualPuntuation()
     {
         ++actualPuntuation;
-        Debug.Log(actualPuntuation);
 
         CheckPuntuation();
     }
@@ -93,7 +92,6 @@ public class SpawnPeople : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Entra");
         _MaxPeopleInScene = 0;
         wall.SetActive(true);
     }

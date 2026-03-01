@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Car Minigame")]
     public bool m_CarMinigame = false;
+    public Transform _fakeFade;
 
     private Vector3 m_CurrentHorizontalVelocity;
     private float m_VerticalSpeed;

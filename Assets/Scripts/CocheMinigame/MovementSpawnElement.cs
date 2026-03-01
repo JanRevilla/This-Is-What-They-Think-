@@ -10,6 +10,12 @@ public class MovementSpawnElement : MonoBehaviour
     Vector3 _Direction = Vector3.zero;
     int _SpawnIndex = 0;
     float _DistanceToChangeDirection = 0;
+    int randomPose = 0;
+
+    private void Start()
+    {
+        SetMannequinPose();
+    }
 
     void Update()
     {
@@ -35,7 +41,7 @@ public class MovementSpawnElement : MonoBehaviour
     private Vector3 Direction()
     {
         Vector3 _NextPosition = Vector3.zero;
-        _NextPosition = new Vector3(_SpawnPosition.x, _Positions[_SpawnIndex + 1].position.y, _Positions[_SpawnIndex + 1].position.z);
+        _NextPosition = new Vector3(_SpawnPosition.x, _SpawnPosition.y, _Positions[_SpawnIndex + 1].position.z);
 
         if (_SpawnIndex == 0)
             return (_NextPosition - _SpawnPosition).normalized;
@@ -48,8 +54,21 @@ public class MovementSpawnElement : MonoBehaviour
         _SpawnPosition = _pos;
     }
 
+    private void SetMannequinPose()
+    {
+        randomPose = Random.Range(0, transform.childCount);
+
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        transform.GetChild(randomPose).gameObject.SetActive(true);
+    }
+
     private void SetVariables()
     {
+        SetMannequinPose();
         transform.position = _SpawnPosition;
         _Direction = Direction();
         _SpawnIndex++;
