@@ -66,14 +66,23 @@ public class CollectorOfPickables : MonoBehaviour
             _pickableObject.transform.parent = transform;
         }
 
-        if(_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject() > 1)
+        if(_pickableObject.tag == "WoodPiece")
         {
-            _pickableObject.transform.localRotation = Quaternion.Euler(Vector3.right.x, Vector3.up.y, -1 * transform.localRotation.eulerAngles.z);
-            Debug.Log(_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject());
+            if (_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject() > 1)
+            {
+                _pickableObject.transform.localRotation = Quaternion.Euler(Vector3.right.x, Vector3.up.y, -1 * transform.localRotation.eulerAngles.z);
+                Debug.Log(_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject());
+            }
+            else
+                _pickableObject.transform.localRotation = Quaternion.Euler(Vector3.left.x * 180, 0, -1 * transform.localRotation.eulerAngles.z);
         }
         else
-            _pickableObject.transform.localRotation = Quaternion.Euler(Vector3.left.x * 180, 0, -1 * transform.localRotation.eulerAngles.z);
-
+        {
+            if(_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject() == 4)
+                _pickableObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            else
+                _pickableObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
+        }
 
         _pickableObject.transform.position += (_positionPoints[_numOfPositionInList].position - _pickableObject.transform.position).normalized * _speed * Time.deltaTime;
 
@@ -83,6 +92,10 @@ public class CollectorOfPickables : MonoBehaviour
             _canAttach = false;
             _pickableObject.GetComponent<PickUp>().SetPickableObject(PickableObject.OnSite);
             ++_numOfPieces;
+
+            if(_positionPoints[_numOfPositionInList].GetComponent<MeshRenderer>())
+                _positionPoints[_numOfPositionInList].GetComponent<MeshRenderer>().enabled = false;
+
             if (_pickableObject.tag == "WoodPiece")
             {
                 GetComponent<AudioSource>().PlayOneShot(wood);

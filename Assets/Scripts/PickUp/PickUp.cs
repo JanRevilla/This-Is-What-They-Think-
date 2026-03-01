@@ -15,7 +15,13 @@ public enum NameOfPickableObject
     Humano = 0,
     Coche,
     Paraguas,
-    Pato
+    Pato,
+    Pinguino1 = 0,
+    Pinguino2 = 1,
+    Pinguino3 = 2,
+    Pinguino4 = 3,
+    Pinguino5 = 4,
+    Pinguino6 = 5
 }
 
 public class PickUp : MonoBehaviour
