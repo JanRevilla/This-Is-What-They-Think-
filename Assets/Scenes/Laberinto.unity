@@ -752,7 +752,7 @@ GameObject:
   - component: {fileID: 1605330686}
   m_Layer: 0
   m_Name: Spawn Point
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1357,6 +1357,63 @@ MonoBehaviour:
   m_ObsoleteUseShadowQualitySettings: 0
   m_ObsoleteCustomShadowResolution: 512
   m_ObsoleteContactShadows: 0
+--- !u!1001 &2068346889
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1063360179001792617, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_Name
+      value: LegoDoor Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.983
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071079
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6402369308092080095, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4316681c2c2ad124d99b8d1c4fb7cf95, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1371,3 +1428,4 @@ SceneRoots:
   - {fileID: 1232715990}
   - {fileID: 678684141}
   - {fileID: 1506012590}
+  - {fileID: 2068346889}
