@@ -21915,20 +21915,44 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1239810455022823846, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: m_Size.x
+      value: 74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239810455022823846, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: m_Size.y
+      value: 7.719418
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239810455022823846, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: m_Size.z
+      value: 35.92383
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239810455022823846, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: m_Center.x
+      value: 6.9895325
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239810455022823846, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: m_Center.y
+      value: 3.359709
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239810455022823846, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: m_Center.z
+      value: 17.461914
+      objectReference: {fileID: 0}
+    - target: {fileID: 1239810455022823846, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2450171519573490758, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2450171519573490758, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2450171519573490758, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 2450171519573490758, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21964,7 +21988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5632913371402642363, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: _DialogueIndex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
