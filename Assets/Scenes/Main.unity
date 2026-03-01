@@ -1660,6 +1660,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -2927,13 +2931,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644894718}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3273,7 +3277,7 @@ PrefabInstance:
     - target: {fileID: 5131727992038238434, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: 'nextFarola.Array.data[0]'
       value: 
-      objectReference: {fileID: 667026003}
+      objectReference: {fileID: 1808986719}
     - target: {fileID: 5131727992038238434, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: 'nextFarola.Array.data[1]'
       value: 
@@ -3297,6 +3301,10 @@ PrefabInstance:
     - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Volume
       value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
@@ -5472,6 +5480,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -5900,6 +5912,10 @@ PrefabInstance:
     - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Volume
       value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
@@ -12786,6 +12802,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -12864,6 +12884,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+--- !u!114 &1808986719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5131727992038238434, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+  m_PrefabInstance: {fileID: 1808986718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8376f89216dff604096513d314c26824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Farola2
 --- !u!1 &1811846250
 GameObject:
   m_ObjectHideFlags: 0
@@ -16604,6 +16635,10 @@ PrefabInstance:
     - target: {fileID: 1312049792921655689, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589534574268301504, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 1865927528991181245, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_Enabled
