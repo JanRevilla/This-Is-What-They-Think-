@@ -76,8 +76,8 @@ public class MovementSpawnElement : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            transform.parent.parent.GetComponent<SpawnPeople>().IncreaseActualPuntuation();
             FinishPath();
-            Debug.Log("Entra");
         }
     }
 }

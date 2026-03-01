@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - Human
   - WoodPiece
+  - RespawnB
+  - Wall
   layers:
   - Default
   - TransparentFX

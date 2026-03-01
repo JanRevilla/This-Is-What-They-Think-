@@ -27,6 +27,13 @@ public class SpawnPeople : MonoBehaviour
     [SerializeField]
     private GameObject _SpawnObject;
 
+    [SerializeField]
+    private int maxPuntuation = 10;
+    private int actualPuntuation = 0;
+
+    [SerializeField]
+    private GameObject wall;
+
     void Start()
     {
         _Pool = new PoolElements(15, _SpawnObject, _Pool.transform);
@@ -65,8 +72,29 @@ public class SpawnPeople : MonoBehaviour
         return new Vector3(_Positions[0].position.x + rnd, _Positions[0].position.y, _Positions[0].position.z);
     }
 
+    private void CheckPuntuation()
+    {
+        if (actualPuntuation == maxPuntuation)
+            GameOver();
+    }
+
+    public void IncreaseActualPuntuation()
+    {
+        ++actualPuntuation;
+        Debug.Log(actualPuntuation);
+
+        CheckPuntuation();
+    }
+
     public void DecreasePeopleInScene()
     {
         _PeopleInScene--;
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("Entra");
+        _MaxPeopleInScene = 0;
+        wall.SetActive(true);
     }
 }
