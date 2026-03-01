@@ -1811,6 +1811,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: m_MaxPitch
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: m_MinPitch
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_UseBobbing
       value: 0
       objectReference: {fileID: 0}
