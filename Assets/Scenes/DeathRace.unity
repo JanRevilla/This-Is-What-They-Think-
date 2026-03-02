@@ -1827,7 +1827,16 @@ PrefabInstance:
       propertyPath: m_UseBobbing
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: m_audioSource
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: m_AudioSteps.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 526613629693069374, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3368464352008632064, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
