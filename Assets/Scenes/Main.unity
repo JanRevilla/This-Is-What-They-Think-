@@ -1323,7 +1323,7 @@ Transform:
   m_GameObject: {fileID: 290628204}
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: -30.7, y: 39.4, z: 34.7}
+  m_LocalPosition: {x: 6.41, y: 39.4, z: 182.1}
   m_LocalScale: {x: 10.682262, y: 10.682262, z: -10.682262}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6210,7 +6210,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1040305619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15792,6 +15792,10 @@ PrefabInstance:
       propertyPath: 'm_AudioSteps.Array.data[4]'
       value: 
       objectReference: {fileID: 8300000, guid: ab7ecbfa8bc235a4a942e6ec32186389, type: 3}
+    - target: {fileID: 7290822768748969666, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.246
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
