@@ -12,6 +12,7 @@ TagManager:
   - RespawnB
   - Wall
   - SpawnPoint
+  - Lego
   layers:
   - Default
   - TransparentFX

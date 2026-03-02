@@ -4,11 +4,12 @@ using UnityEngine;
 public class DoorBehaviour : MonoBehaviour
 {
 
-    new Animation animation;
+    public new Animation animation;
     BoxCollider boxCollider;
     public AudioClip OpenAudio;
     public AudioClip CloseAudio;
     AudioSource audioSource;
+    public bool ClosedDoor ;
     bool IsOpen;
     void Start()
     {
@@ -31,14 +32,20 @@ public class DoorBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        animation.PlayQueued("OpenDoor", QueueMode.CompleteOthers);
-        IsOpen = true;
-        audioSource.PlayOneShot(OpenAudio);
+        if (!ClosedDoor)
+        {
+            animation.PlayQueued("OpenDoor", QueueMode.CompleteOthers);
+            IsOpen = true;
+            audioSource.PlayOneShot(OpenAudio);
+        }
     }
     private void OnTriggerExit(Collider other)
     {
-        animation.PlayQueued("CloseDoor", QueueMode.CompleteOthers);
-        IsOpen=false;
-        audioSource.PlayOneShot(CloseAudio);
+        if (!ClosedDoor)
+        {
+            animation.PlayQueued("CloseDoor", QueueMode.CompleteOthers);
+            IsOpen = false;
+            audioSource.PlayOneShot(CloseAudio);
+        }
     }
 }
