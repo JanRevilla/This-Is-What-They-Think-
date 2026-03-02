@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,7 +10,15 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(_SceneName);
+            /*StartCoroutine(CanvasFadeOut());
+            SceneManager.LoadScene(_SceneName);*/
+            GameManager.Instance.ChangeScene(_SceneName);
         }
+    }
+
+    IEnumerator CanvasFadeOut()
+    {
+
+        yield return new WaitForSeconds(1);
     }
 }

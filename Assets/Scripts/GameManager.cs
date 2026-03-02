@@ -1,29 +1,38 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+
     static private GameManager m_GameManager;
 
     PlayerController m_Player;
 
     public Transform m_DestroyObjects;
 
-    public GameObject m_Canvas;
-
     // public Fade m_Fade;
 
     private bool m_KeyPicked;
 
-    public string m_FirstSceneName = "FirstLevel";
-    public string m_SecondSceneName = "SecondLevel";
+    /*public string m_FirstSceneName = "FirstLevel";
+    public string m_SecondSceneName = "SecondLevel";*/
+
+    [Header("Configuración de Transición")]
+    [SerializeField] private Animator m_CanvaFadeAnimator;
+    [SerializeField] private float m_WaitTime = 2f;
 
     private void Awake()
     {
-        if (m_GameManager != null)
+        if (Instance == null)
         {
-            GameObject.Destroy(gameObject);
-            return;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
         m_GameManager = this;
         m_KeyPicked = false;
@@ -36,7 +45,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOverScreen()
     {
-        m_Canvas.SetActive(true);
+        //m_Canvas.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Time.timeScale = 0;
     }
@@ -56,7 +65,7 @@ public class GameManager : MonoBehaviour
         */
     }
 
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -66,7 +75,7 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(m_SecondSceneName);
         }
-    }
+    }*/
 
     public PlayerController GetPlayer()
     {
@@ -88,13 +97,21 @@ public class GameManager : MonoBehaviour
         return m_KeyPicked;
     }
 
-    public void LoadLevel(string sceneName)
+    //-------------------------------------SCENE CHANGER---------------------------------------------//
+    public void ChangeScene(string sceneName)
     {
-        SceneManager.LoadSceneAsync(sceneName);
-        /*m_Fade.FadeOut(() =>
+        StartCoroutine(TransitionProcess(sceneName));
+    }
+
+    IEnumerator TransitionProcess(string sceneName)
+    {
+        if (m_CanvaFadeAnimator != null)
         {
-            m_Fade.gameObject.SetActive(false);
-        });
-        */
+            m_CanvaFadeAnimator.SetTrigger("FadeOut");
+        }
+
+        yield return new WaitForSeconds(m_WaitTime);
+
+        SceneManager.LoadScene(sceneName);
     }
 }
