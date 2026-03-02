@@ -16,6 +16,10 @@ public class SceneChanger : MonoBehaviour
         }
     }
 
+    public void ReturnMenu()
+    {
+        GameManager.Instance.ChangeScene("Main");
+    }
     IEnumerator CanvasFadeOut()
     {
 
