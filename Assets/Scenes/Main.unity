@@ -4011,7 +4011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5131727992038238434, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: nextFarola.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5131727992038238434, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: 'nextFarola.Array.data[0]'
@@ -4032,7 +4032,7 @@ PrefabInstance:
     - target: {fileID: 5131727992038238434, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: 'nextFarola.Array.data[4]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 240609589}
     - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: Pan2D
       value: 0
