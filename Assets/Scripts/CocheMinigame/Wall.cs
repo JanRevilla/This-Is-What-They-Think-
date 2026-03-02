@@ -38,6 +38,8 @@ public class Wall : MonoBehaviour
                 other.GetComponent<PlayerController>()._fakeFade.parent.GetComponent<CameraController>().enabled = false;
                 if (other.GetComponent<PlayerController>()._fakeFade.localScale.magnitude < 5)
                     other.GetComponent<PlayerController>()._fakeFade.localScale += new Vector3(0.25f, 0.25f, 0);
+                else
+                    transform.GetChild(0).gameObject.SetActive(true);
             }
         }
     }
