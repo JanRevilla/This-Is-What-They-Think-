@@ -10943,6 +10943,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0.46191803
       objectReference: {fileID: 0}
+    - target: {fileID: 1239810455022823846, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2450171519573490758, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.44
@@ -10990,6 +10994,14 @@ PrefabInstance:
     - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: _DialogueIndex
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: _HasSecondDialogue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: _SecondDialogueIndex
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16392,8 +16404,12 @@ PrefabInstance:
       value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2275880288794802392, guid: 8422e85c8228a7a4c8f7abec2310a1cb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.67193
+      objectReference: {fileID: 0}
+    - target: {fileID: 2275880288794802392, guid: 8422e85c8228a7a4c8f7abec2310a1cb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.095615
+      value: 18.461
       objectReference: {fileID: 0}
     - target: {fileID: 2275880288794802392, guid: 8422e85c8228a7a4c8f7abec2310a1cb, type: 3}
       propertyPath: m_LocalPosition.z

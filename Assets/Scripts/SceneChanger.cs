@@ -18,7 +18,6 @@ public class SceneChanger : MonoBehaviour
 
     IEnumerator CanvasFadeOut()
     {
-
         yield return new WaitForSeconds(1);
     }
 }
