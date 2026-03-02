@@ -18,7 +18,9 @@ public class SceneChanger : MonoBehaviour
 
     public void ReturnMenu()
     {
-        GameManager.Instance.ChangeScene(_SceneName);
+
+        Debug.Log("tesssss");
+        //GameManager.Instance.ChangeScene(_SceneName);
     }
     IEnumerator CanvasFadeOut()
     {
