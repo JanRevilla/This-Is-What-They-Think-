@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Laberinto.unity
     guid: cdbd0b74f5f64a1429899d78e79d05bc
   - enabled: 1
-    path: "Assets/Scenes/Prueba \xC0dam.unity"
+    path: Assets/Scenes/Arcade.unity
     guid: 3765c72b9ac64304fa52df627a2b4ee5
   - enabled: 1
     path: Assets/Scenes/DeathRace.unity
