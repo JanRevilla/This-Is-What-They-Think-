@@ -20718,6 +20718,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   _DialogueIndex: 0
+  _HasSecondDialogue: 1
+  _SecondDialogueIndex: 1
+  _DelayBetweenDialogs: 2
 --- !u!1 &8603684142224399533
 GameObject:
   m_ObjectHideFlags: 0
