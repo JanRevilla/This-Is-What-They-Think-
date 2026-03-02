@@ -62,12 +62,17 @@ public class MovementSpawnElement : MonoBehaviour
     {
         randomPose = Random.Range(0, transform.childCount);
 
-        for(int i = 0; i < transform.childCount; i++)
+        DisableMannequinPoses();
+
+        transform.GetChild(randomPose).gameObject.SetActive(true);
+    }
+
+    private void DisableMannequinPoses()
+    {
+        for (int i = 0; i < transform.childCount; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
-
-        transform.GetChild(randomPose).gameObject.SetActive(true);
     }
 
     private void SetVariables()
@@ -101,14 +106,16 @@ public class MovementSpawnElement : MonoBehaviour
         {
             StartCoroutine(PlayAudio());
             transform.parent.parent.GetComponent<SpawnPeople>().IncreaseActualPuntuation();
-            FinishPath();
         }
     }
     IEnumerator PlayAudio()
     {
+        DisableMannequinPoses();
         _audioSource.clip = _audioClip;
         _audioSource.Play();
 
         yield return new WaitWhile(() => _audioSource.isPlaying);
+
+        FinishPath();
     }
 }
