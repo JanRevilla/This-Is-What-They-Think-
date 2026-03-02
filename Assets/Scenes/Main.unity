@@ -17600,6 +17600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LegoDoor SceneChanger
       objectReference: {fileID: 0}
+    - target: {fileID: 6898968388983278648, guid: 9dfc76377d015914aa13dce7786c4fcd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7245080860394811796, guid: 9dfc76377d015914aa13dce7786c4fcd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 62.922
