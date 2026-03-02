@@ -25,6 +25,7 @@ public class CollectorOfPickables : MonoBehaviour
     public Farola[] lastFarolas;
     bool IsFinished = false;
     public AudioClip wood;
+    public DoorBehaviour door;
     void Start()
     {
         _target = GameObject.FindWithTag("Pick Pivot");
@@ -40,6 +41,7 @@ public class CollectorOfPickables : MonoBehaviour
         if (_numOfPieces == _positionPoints.Count && IsFinished == false)
         {
             SetFarolas();
+            
         }
     }
 
@@ -56,6 +58,10 @@ public class CollectorOfPickables : MonoBehaviour
         {
             Debug.Log("Apagar");
             b.SetLights(false);
+        }
+        if (door != false)
+        {
+            door.animation.Play("OpenDoor");
         }
     }
 
@@ -96,7 +102,7 @@ public class CollectorOfPickables : MonoBehaviour
             if(_positionPoints[_numOfPositionInList].GetComponent<MeshRenderer>())
                 _positionPoints[_numOfPositionInList].GetComponent<MeshRenderer>().enabled = false;
 
-            if (_pickableObject.tag == "WoodPiece")
+            if (_pickableObject.tag == "WoodPiece" || _pickableObject.tag == "Lego")
             {
                 GetComponent<AudioSource>().PlayOneShot(wood);
             }
