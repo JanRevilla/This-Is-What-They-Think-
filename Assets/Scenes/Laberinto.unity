@@ -10993,7 +10993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: _DialogueIndex
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: _HasSecondDialogue
@@ -11001,7 +11001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: _SecondDialogueIndex
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
