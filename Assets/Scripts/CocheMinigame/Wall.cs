@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Wall : MonoBehaviour
 {
@@ -40,6 +42,9 @@ public class Wall : MonoBehaviour
                     other.GetComponent<PlayerController>()._fakeFade.localScale += new Vector3(0.25f, 0.25f, 0);
                 else
                     transform.GetChild(0).gameObject.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    
             }
         }
     }
