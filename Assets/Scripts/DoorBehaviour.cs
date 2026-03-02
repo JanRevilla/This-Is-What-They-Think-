@@ -1,5 +1,7 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DoorBehaviour : MonoBehaviour
 {
@@ -45,7 +47,21 @@ public class DoorBehaviour : MonoBehaviour
         {
             animation.PlayQueued("CloseDoor", QueueMode.CompleteOthers);
             IsOpen = false;
+            StartCoroutine(AudioCloseDoor());
+            //audioSource.PlayOneShot(CloseAudio);
+        }
+    }
+
+    IEnumerator AudioCloseDoor()
+    {
+        AnimationState state = animation["CloseDoor"];
+
+        if (state != null)
+        {
+            yield return new WaitForSeconds(state.length);
+
             audioSource.PlayOneShot(CloseAudio);
+            Debug.Log("Puerta cerrada: Sonando audio de impacto.");
         }
     }
 }
