@@ -16,6 +16,12 @@ public class SceneChanger : MonoBehaviour
         }
     }
 
+    public void ReturnMenu()
+    {
+
+        Debug.Log("tesssss");
+        //GameManager.Instance.ChangeScene(_SceneName);
+    }
     IEnumerator CanvasFadeOut()
     {
         yield return new WaitForSeconds(1);
