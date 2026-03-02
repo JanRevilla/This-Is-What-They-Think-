@@ -11,6 +11,7 @@ public class MovementSpawnElement : MonoBehaviour
     int _SpawnIndex = 0;
     float _DistanceToChangeDirection = 0;
     int randomPose = 0;
+    public AudioClip _audioClip;
 
     private void Start()
     {
@@ -95,8 +96,10 @@ public class MovementSpawnElement : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            GetComponent<AudioSource>().PlayOneShot(_audioClip);
             transform.parent.parent.GetComponent<SpawnPeople>().IncreaseActualPuntuation();
             FinishPath();
+            
         }
     }
 }
