@@ -15,6 +15,9 @@ public class MovementSpawnElement : MonoBehaviour
     public AudioClip _audioClip;
     AudioSource _audioSource;
 
+    [SerializeField]
+    private GameObject blood;
+
     private void Start()
     {
         SetMannequinPose();
@@ -60,7 +63,7 @@ public class MovementSpawnElement : MonoBehaviour
 
     private void SetMannequinPose()
     {
-        randomPose = Random.Range(0, transform.childCount);
+        randomPose = Random.Range(0, transform.childCount - 1);
 
         DisableMannequinPoses();
 
@@ -69,7 +72,7 @@ public class MovementSpawnElement : MonoBehaviour
 
     private void DisableMannequinPoses()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.childCount - 1; i++)
         {
             transform.GetChild(i).gameObject.SetActive(false);
         }
@@ -97,6 +100,7 @@ public class MovementSpawnElement : MonoBehaviour
         _SpawnPosition = transform.parent.parent.GetComponent<SpawnPeople>().RandomFirstPos();
         _SpawnIndex = 0;
         SetVariables();
+        SetBlood(false);
         gameObject.SetActive(false);
     }
 
@@ -108,11 +112,19 @@ public class MovementSpawnElement : MonoBehaviour
             transform.parent.parent.GetComponent<SpawnPeople>().IncreaseActualPuntuation();
         }
     }
+
+    private void SetBlood(bool v)
+    {
+        blood.SetActive(v);
+    }
+
     IEnumerator PlayAudio()
     {
         DisableMannequinPoses();
         _audioSource.clip = _audioClip;
         _audioSource.Play();
+
+        SetBlood(true);
 
         yield return new WaitWhile(() => _audioSource.isPlaying);
 
