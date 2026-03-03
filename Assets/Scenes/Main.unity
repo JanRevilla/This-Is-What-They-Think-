@@ -8411,7 +8411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a924f7337e7292d4d8d08b5beafbec08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  _SceneName: Laberinto
+  _SceneName: Credits
 --- !u!65 &1357205768
 BoxCollider:
   m_ObjectHideFlags: 0
