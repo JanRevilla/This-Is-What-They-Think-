@@ -1882,6 +1882,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1589534574268301504, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: field of view
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 1865927528991181245, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: _fakeFade
       value: 
@@ -1932,7 +1936,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_MaxPitch
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_MinPitch
@@ -1948,6 +1952,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4880098871581607373, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_AudioSteps.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961195063469441302, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: clearColorMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961195063469441302, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: backgroundColorHDR.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961195063469441302, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: backgroundColorHDR.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8961195063469441302, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: backgroundColorHDR.r
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -2509,6 +2529,7 @@ MonoBehaviour:
   _Pool: {fileID: 1390460323}
   _SpawnObject: {fileID: 7526989436551900740, guid: 97cb29ae6f4401446b8c16a3be2e3b61, type: 3}
   maxPuntuation: 10
+  actualPuntuation: 0
   wall: {fileID: 1757926284}
 --- !u!1001 &749798712
 PrefabInstance:

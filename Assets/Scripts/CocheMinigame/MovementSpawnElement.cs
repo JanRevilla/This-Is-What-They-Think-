@@ -122,6 +122,7 @@ public class MovementSpawnElement : MonoBehaviour
     {
         DisableMannequinPoses();
         _audioSource.clip = _audioClip;
+        _audioSource.pitch = Random.Range(0.75f, 1.10f);
         _audioSource.Play();
 
         SetBlood(true);
