@@ -28,6 +28,7 @@ public class MenuController : MonoBehaviour
         PlayerController.enabled = false;
         CameraController.enabled = false;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void OnPlay()

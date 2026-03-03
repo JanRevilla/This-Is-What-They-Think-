@@ -188,8 +188,10 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("Main");
 
+        
         AudioListener.pause = false;
         _MenuPause.SetActive(false);
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
