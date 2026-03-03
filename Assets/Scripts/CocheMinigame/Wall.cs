@@ -7,6 +7,7 @@ public class Wall : MonoBehaviour
 {
     [SerializeField]
     private float speed = 15;
+    public CarSoundController _carSoundController;
 
     public AudioClip _audioClip;
     AudioSource _audioSource;
@@ -51,6 +52,7 @@ public class Wall : MonoBehaviour
 
     IEnumerator PlayAudio()
     {
+        _carSoundController.StopLoopEngine();
         _audioSource.clip = _audioClip;
         _audioSource.Play();
 
@@ -58,5 +60,8 @@ public class Wall : MonoBehaviour
 
         speed = 0;
         activeFade = true;
+
+        yield return new WaitForSeconds(1f);
+        DialogsController.Instance.PlayFinalAudio();
     }
 }

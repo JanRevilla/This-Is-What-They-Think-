@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,7 +48,7 @@ public class CollectorOfPickables : MonoBehaviour
 
         if ((_numOfPieces == _NumOfPiecesToPlayDialogue) && (gameObject.CompareTag("LegoPenguin")))
         {
-            DialogsController.Instance.PlayDialog(_DialogueIndex);
+            StartCoroutine(WaitAndPlayFinalAudio());
         }
     }
 
@@ -78,7 +79,7 @@ public class CollectorOfPickables : MonoBehaviour
             _pickableObject.transform.parent = transform;
         }
 
-        if(_pickableObject.tag == "WoodPiece")
+        if (_pickableObject.tag == "WoodPiece")
         {
             if (_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject() > 1)
             {
@@ -90,7 +91,7 @@ public class CollectorOfPickables : MonoBehaviour
         }
         else
         {
-            if(_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject() == 4)
+            if (_pickableObject.GetComponent<PickUp>().GetNameOfPickableObject() == 4)
                 _pickableObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
             else
                 _pickableObject.transform.localRotation = Quaternion.Euler(0, 0, 90);
@@ -105,7 +106,7 @@ public class CollectorOfPickables : MonoBehaviour
             _pickableObject.GetComponent<PickUp>().SetPickableObject(PickableObject.OnSite);
             ++_numOfPieces;
 
-            if(_positionPoints[_numOfPositionInList].GetComponent<MeshRenderer>())
+            if (_positionPoints[_numOfPositionInList].GetComponent<MeshRenderer>())
                 _positionPoints[_numOfPositionInList].GetComponent<MeshRenderer>().enabled = false;
 
             if (_pickableObject.tag == "WoodPiece" || _pickableObject.tag == "Lego")
@@ -138,5 +139,20 @@ public class CollectorOfPickables : MonoBehaviour
     {
         if (other.tag == "Player")
             _canFalling = true;
+    }
+
+    IEnumerator WaitAndPlayFinalAudio()
+    {
+
+        while (DialogsController.Instance.IsPlaying())
+        {
+            yield return null;
+        }
+        Debug.Log("ELAudioSEHACEPLAY");
+
+        yield return new WaitForSeconds(0.5f);
+
+
+        DialogsController.Instance.PlayDialog(_DialogueIndex);
     }
 }

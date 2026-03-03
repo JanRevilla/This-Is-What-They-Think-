@@ -7494,7 +7494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a924f7337e7292d4d8d08b5beafbec08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  _SceneName: DeathRace
+  _SceneName: Laberinto
 --- !u!65 &1357205768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8119,7 +8119,7 @@ MonoBehaviour:
   m_AudioDialogs:
   - {fileID: 8300000, guid: d61b9d7305060e44682f5bc5b642ec09, type: 3}
   - {fileID: 8300000, guid: 371dba10f57e28b43a4c02720e0b6a93, type: 3}
-  - {fileID: 8300000, guid: 276087a2a56edf640a0678506962754f, type: 3}
+  - {fileID: 8300000, guid: 03c4031e8d9e3b14bba015aa0f4d202c, type: 3}
   - {fileID: 8300000, guid: 5673b3790a5e71d468a48f5e8ce239bf, type: 3}
   - {fileID: 8300000, guid: 9c969c78c06788b4c82cc97659c525cf, type: 3}
   - {fileID: 8300000, guid: c494b4d3d345be34ea6cfa3254d697c0, type: 3}
@@ -8131,7 +8131,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 080b0d7c10ef8864180834553807ef0e, type: 3}
   - {fileID: 8300000, guid: 0f4b7a83e01f09d4e9d98f566799dc4a, type: 3}
   - {fileID: 8300000, guid: 945b2ea19bae66346b94dccc7c147313, type: 3}
-  - {fileID: 8300000, guid: 76f0db2f62d6d42419418cce37b2735d, type: 3}
+  m_FinalDialog: {fileID: 8300000, guid: 76f0db2f62d6d42419418cce37b2735d, type: 3}
 --- !u!1 &1395616025
 GameObject:
   m_ObjectHideFlags: 0

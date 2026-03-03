@@ -122,14 +122,14 @@ public class MovementSpawnElement : MonoBehaviour
     {
         DisableMannequinPoses();
         _audioSource.clip = _audioClip;
-        _audioSource.pitch = Random.Range(0.75f, 1.10f);
+        _audioSource.pitch = Random.Range(0.65f, 1.25f);
         _audioSource.Play();
 
         SetBlood(true);
 
         if (transform.parent.parent.GetComponent<SpawnPeople>().actualPuntuation % 2 == 0)
         {
-            DialogsController.Instance.PlayRandomDialog();
+            DialogsController.Instance.PlayNotRandomDialog();
         }
 
         yield return new WaitWhile(() => _audioSource.isPlaying);
