@@ -52,11 +52,12 @@ public class Wall : MonoBehaviour
 
     IEnumerator PlayAudio()
     {
-        _carSoundController.StopLoopEngine();
         _audioSource.clip = _audioClip;
         _audioSource.Play();
 
         yield return new WaitUntil(() => _audioSource.time >= (_audioClip.length / 5));
+        _carSoundController.StopLoopEngine();
+
 
         speed = 0;
         activeFade = true;

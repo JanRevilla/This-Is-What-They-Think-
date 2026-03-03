@@ -23864,6 +23864,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: -90}
+--- !u!1 &1268389425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5632913371402642363, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+  m_PrefabInstance: {fileID: 1364237953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1268389429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268389425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccbac980793cd7e4099828b159b035af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChromaticAberrationChanger
+  globalVolume: {fileID: 1110723247}
+  transitionDuration: 10
+  maxChromatic: 1
+  maxLensDistortion: 0.6
+  maxVignette: 0.55
+  maxFilmGrain: 0.909
+  targetSaturation: 100
 --- !u!1 &1269255212
 GameObject:
   m_ObjectHideFlags: 0
@@ -25224,7 +25248,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5632913371402642363, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1268389429}
   m_SourcePrefab: {fileID: 100100000, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
 --- !u!1001 &1378165589
 PrefabInstance:

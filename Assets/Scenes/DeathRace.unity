@@ -1891,6 +1891,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 648159871}
     - target: {fileID: 1865927528991181245, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
+      propertyPath: m_MaxSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1865927528991181245, guid: 36c9af1e7dffcb4439e8b483c184de2e, type: 3}
       propertyPath: m_CarMinigame
       value: 1
       objectReference: {fileID: 0}
