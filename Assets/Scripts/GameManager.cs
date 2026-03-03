@@ -43,6 +43,14 @@ public class GameManager : MonoBehaviour
     {
         return m_GameManager;
     }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ResetGame();
+        }
+    }
     public void GameOverScreen()
     {
         //m_Canvas.SetActive(true);
@@ -113,5 +121,23 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(m_WaitTime);
 
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void ResetGame()
+    {
+        if (DialogsController.Instance != null)
+        {
+            DialogsController.Instance.m_audioSource.Stop();
+        }
+
+        AudioSource[] fuentes = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource source in fuentes)
+        {
+            source.Stop();
+            source.clip = null; 
+        }
+
+        AudioListener.pause = false;
+        SceneManager.LoadScene("Main");
     }
 }

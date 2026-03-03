@@ -28,6 +28,7 @@ public class CollectorOfPickables : MonoBehaviour
     public AudioClip wood;
     public DoorBehaviour door;
     public int _DialogueIndex;
+    public bool _DialogueTriggered = false;
     public int _NumOfPiecesToPlayDialogue;
     void Start()
     {
@@ -46,7 +47,7 @@ public class CollectorOfPickables : MonoBehaviour
             SetFarolas();
         }
 
-        if ((_numOfPieces == _NumOfPiecesToPlayDialogue) && (gameObject.CompareTag("LegoPenguin")))
+        if ((_numOfPieces == _NumOfPiecesToPlayDialogue) && (gameObject.CompareTag("LegoPenguin")) && !_DialogueTriggered)
         {
             StartCoroutine(WaitAndPlayFinalAudio());
         }
@@ -143,7 +144,6 @@ public class CollectorOfPickables : MonoBehaviour
 
     IEnumerator WaitAndPlayFinalAudio()
     {
-
         while (DialogsController.Instance.IsPlaying())
         {
             yield return null;
@@ -152,7 +152,8 @@ public class CollectorOfPickables : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-
         DialogsController.Instance.PlayDialog(_DialogueIndex);
+
+        _DialogueTriggered = true;
     }
 }

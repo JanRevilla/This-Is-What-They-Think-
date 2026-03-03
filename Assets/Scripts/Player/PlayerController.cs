@@ -80,33 +80,4 @@ public class PlayerController : MonoBehaviour
             m_VerticalSpeed = 0;
         }
     }
-
-
-    //-----------------------------SCENE CONTROLLER------------------------------//
-    /*void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        GameObject spawnPoint = GameObject.FindWithTag("SpawnPoint");
-
-        if (spawnPoint != null)
-        {
-            m_CharacterController.enabled = false;
-            transform.position = spawnPoint.transform.position;
-            transform.rotation = spawnPoint.transform.rotation;
-            m_CharacterController.enabled = true;
-        }
-        else
-        {
-            Debug.LogWarning("No scene found!!!");
-        }
-    }*/
 }
