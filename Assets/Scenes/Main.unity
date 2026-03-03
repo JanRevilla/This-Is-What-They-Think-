@@ -5845,6 +5845,7 @@ MonoBehaviour:
   m_DestroyObjects: {fileID: 0}
   _IsPaused: 0
   _MenuPause: {fileID: 2049669506}
+  _MainMenu: {fileID: 1367151287}
   m_CanvaFadeAnimator: {fileID: 1062505954}
   m_WaitTime: 3
 --- !u!4 &990400620
@@ -8398,7 +8399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1357205767
 MonoBehaviour:
   m_ObjectHideFlags: 0

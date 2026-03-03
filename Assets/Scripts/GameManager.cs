@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     bool _IsPaused;
     public GameObject _MenuPause;
+    GameObject _MainMenu;
 
     // public Fade m_Fade;
 
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour
         }
         m_GameManager = this;
         m_KeyPicked = false;
+
+        _MainMenu = GameObject.Find("MenuCanvas");
         DontDestroyOnLoad(gameObject);
     }
 
@@ -50,17 +53,31 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (_IsPaused)
+            if (_MainMenu == null)
             {
-                Resume();
+                _MainMenu = GameObject.Find("MenuCanvas");
+                Debug.Log(_MainMenu);
+            }
+
+            if (_MainMenu != null && _MainMenu.activeInHierarchy)
+            {
+                return;
             }
             else
             {
-                Pause();
-            }
-        }
+                if (_IsPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
+            }        
+        }   
     }
     public void GameOverScreen()
     {
