@@ -6,26 +6,27 @@ public class DialogueTrigger : MonoBehaviour
     public int _DialogueIndex;
     private bool _TriggeredAudio = false;
 
-    public bool _IsTimeUpAudio = false; 
-
-    [Header("Segundo Diálogo (Opcional)")]
-    public bool _HasSecondDialogue = false;
-    public int _SecondDialogueIndex;
-    public float _DelayBetweenDialogs = 7.0f;
-
+    public bool _IsTimeUpAudio = false;
     public DoorBehaviour _Door;
+
+    [Header("Diálogo Esperando (Opcional)")]
+    public bool _TimedDialogue = false;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (!_TriggeredAudio)
         {
-            DialogsController.Instance.PlayDialog(_DialogueIndex);
-            _TriggeredAudio = true;
-
-            if (_HasSecondDialogue)
+            if (!_TimedDialogue)
             {
-                StartCoroutine(SecondDialog());
+                DialogsController.Instance.PlayDialog(_DialogueIndex);
+                _TriggeredAudio = true;
             }
+            else
+            {
+                StartCoroutine(TimedDialog());
+            }
+
             if (_IsTimeUpAudio)
             {
                 StartCoroutine(OpenDoor());
@@ -33,11 +34,19 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    IEnumerator SecondDialog()
+    IEnumerator TimedDialog()
     {
-        float l_Duration = DialogsController.Instance.m_AudioDialogs[_DialogueIndex].length;
-        yield return new WaitForSeconds(l_Duration + _DelayBetweenDialogs);
-        DialogsController.Instance.PlayDialog(_SecondDialogueIndex);
+        while (DialogsController.Instance.IsPlaying())
+        {
+            yield return null;
+        }
+        Debug.Log("ELAudioSEHACEPLAY");
+
+        yield return new WaitForSeconds(0.5f);
+
+        DialogsController.Instance.PlayDialog(_DialogueIndex);
+
+        _TriggeredAudio = true;
     }
     IEnumerator OpenDoor()
     {

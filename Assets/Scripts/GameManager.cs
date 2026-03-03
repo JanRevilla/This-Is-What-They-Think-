@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
 
     public Transform m_DestroyObjects;
 
+    [SerializeField]
+    bool _IsPaused;
+    public GameObject _MenuPause;
+
     // public Fade m_Fade;
 
     private bool m_KeyPicked;
@@ -48,7 +52,14 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ResetGame();
+            if (_IsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
     }
     public void GameOverScreen()
@@ -73,18 +84,6 @@ public class GameManager : MonoBehaviour
         */
     }
 
-    /*private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SceneManager.LoadSceneAsync(m_FirstSceneName);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SceneManager.LoadSceneAsync(m_SecondSceneName);
-        }
-    }*/
-
     public PlayerController GetPlayer()
     {
         return m_Player;
@@ -103,6 +102,43 @@ public class GameManager : MonoBehaviour
     public bool GetKey()
     {
         return m_KeyPicked;
+    }
+
+    public void Resume()
+    {
+        _MenuPause.SetActive(false);
+        Time.timeScale = 1f;
+        _IsPaused = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        AudioSource[] allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource source in allAudioSources)
+        {
+            source.UnPause();
+        }
+    }
+
+    void Pause()
+    {
+        _MenuPause.SetActive(true);
+        Time.timeScale = 0f;
+        _IsPaused = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        AudioSource[] allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource source in allAudioSources)
+        {
+            source.Pause();
+        }
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
+        Debug.Log("Game Closed");
     }
 
     //-------------------------------------SCENE CHANGER---------------------------------------------//
@@ -125,19 +161,19 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
+        Time.timeScale = 1f;
+        _IsPaused = false;
+
         if (DialogsController.Instance != null)
         {
             DialogsController.Instance.m_audioSource.Stop();
         }
 
-        AudioSource[] fuentes = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
-        foreach (AudioSource source in fuentes)
-        {
-            source.Stop();
-            source.clip = null; 
-        }
+        SceneManager.LoadScene("Main");
 
         AudioListener.pause = false;
-        SceneManager.LoadScene("Main");
+        _MenuPause.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }
