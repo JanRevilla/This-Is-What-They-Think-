@@ -3657,7 +3657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5131727992038238434, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: nextFarola.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5131727992038238434, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: 'nextFarola.Array.data[0]'
