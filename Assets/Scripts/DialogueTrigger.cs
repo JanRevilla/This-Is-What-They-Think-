@@ -6,10 +6,14 @@ public class DialogueTrigger : MonoBehaviour
     public int _DialogueIndex;
     private bool _TriggeredAudio = false;
 
+    public bool _IsTimeUpAudio = false; 
+
     [Header("Segundo Diálogo (Opcional)")]
     public bool _HasSecondDialogue = false;
     public int _SecondDialogueIndex;
     public float _DelayBetweenDialogs = 7.0f;
+
+    public DoorBehaviour _Door;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +26,10 @@ public class DialogueTrigger : MonoBehaviour
             {
                 StartCoroutine(SecondDialog());
             }
+            if (_IsTimeUpAudio)
+            {
+                StartCoroutine(OpenDoor());
+            }
         }
     }
 
@@ -30,5 +38,12 @@ public class DialogueTrigger : MonoBehaviour
         float l_Duration = DialogsController.Instance.m_AudioDialogs[_DialogueIndex].length;
         yield return new WaitForSeconds(l_Duration + _DelayBetweenDialogs);
         DialogsController.Instance.PlayDialog(_SecondDialogueIndex);
+    }
+    IEnumerator OpenDoor()
+    {
+        float l_Duration = DialogsController.Instance.m_AudioDialogs[_DialogueIndex].length;
+        yield return new WaitForSeconds(l_Duration);
+        _Door.ClosedDoor = false;
+
     }
 }

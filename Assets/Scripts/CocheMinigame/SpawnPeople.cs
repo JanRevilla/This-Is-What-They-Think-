@@ -29,7 +29,7 @@ public class SpawnPeople : MonoBehaviour
 
     [SerializeField]
     private int maxPuntuation = 10;
-    private int actualPuntuation = 0;
+    public int actualPuntuation = 0;
 
     [SerializeField]
     private GameObject wall;

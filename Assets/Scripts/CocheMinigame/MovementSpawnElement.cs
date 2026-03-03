@@ -126,7 +126,14 @@ public class MovementSpawnElement : MonoBehaviour
 
         SetBlood(true);
 
+        if (transform.parent.parent.GetComponent<SpawnPeople>().actualPuntuation % 2 == 0)
+        {
+            DialogsController.Instance.PlayRandomDialog();
+        }
+
         yield return new WaitWhile(() => _audioSource.isPlaying);
+
+        
 
         FinishPath();
     }

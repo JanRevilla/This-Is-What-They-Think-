@@ -37,6 +37,7 @@ public class DialogsController : MonoBehaviour
         m_audioSource.clip = m_RandomAudioDialogs[indice];
 
         m_audioSource.PlayOneShot(m_audioSource.clip);
+        Debug.Log("SONAAAR");
     }
 
 

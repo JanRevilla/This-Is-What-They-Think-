@@ -11060,7 +11060,7 @@ MonoBehaviour:
   animation: {fileID: 0}
   OpenAudio: {fileID: 8300000, guid: a3007569b07c0aa4da8d16b6c2176d8f, type: 3}
   CloseAudio: {fileID: 8300000, guid: 19efa6c4247928d45a6d8cf595be6fff, type: 3}
-  ClosedDoor: 0
+  ClosedDoor: 1
 --- !u!82 &579605774
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25167,7 +25167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2450171519573490758, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.74
+      value: 10.1
       objectReference: {fileID: 0}
     - target: {fileID: 2450171519573490758, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_LocalPosition.y
@@ -25175,7 +25175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2450171519573490758, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -59.459282
+      value: -62.11
       objectReference: {fileID: 0}
     - target: {fileID: 2450171519573490758, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25210,8 +25210,16 @@ PrefabInstance:
       value: Dialogue Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: _Door
+      value: 
+      objectReference: {fileID: 579605773}
+    - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
       propertyPath: _DialogueIndex
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6444933150379371875, guid: 8a5628ca5d45e3f48b4bd7927a5a0463, type: 3}
+      propertyPath: _IsTimeUpAudio
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

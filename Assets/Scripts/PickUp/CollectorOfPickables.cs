@@ -26,6 +26,8 @@ public class CollectorOfPickables : MonoBehaviour
     bool IsFinished = false;
     public AudioClip wood;
     public DoorBehaviour door;
+    public int _DialogueIndex;
+    public int _NumOfPiecesToPlayDialogue;
     void Start()
     {
         _target = GameObject.FindWithTag("Pick Pivot");
@@ -41,7 +43,11 @@ public class CollectorOfPickables : MonoBehaviour
         if (_numOfPieces == _positionPoints.Count && IsFinished == false)
         {
             SetFarolas();
-            
+        }
+
+        if ((_numOfPieces == _NumOfPiecesToPlayDialogue) && (gameObject.CompareTag("LegoPenguin")))
+        {
+            DialogsController.Instance.PlayDialog(_DialogueIndex);
         }
     }
 
