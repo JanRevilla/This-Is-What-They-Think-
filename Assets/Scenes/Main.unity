@@ -5845,7 +5845,6 @@ MonoBehaviour:
   m_DestroyObjects: {fileID: 0}
   _IsPaused: 0
   _MenuPause: {fileID: 2049669506}
-  _MainMenu: {fileID: 1367151287}
   m_CanvaFadeAnimator: {fileID: 1062505954}
   m_WaitTime: 3
 --- !u!4 &990400620
@@ -8412,7 +8411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a924f7337e7292d4d8d08b5beafbec08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  _SceneName: Credits
+  _SceneName: DeathRace
 --- !u!65 &1357205768
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8962,7 +8961,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
