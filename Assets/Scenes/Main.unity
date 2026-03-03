@@ -886,6 +886,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
       value: 0.19530971
@@ -3687,6 +3691,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1256165001591304622, guid: 10a0a80935c5da647b7491146641d273, type: 3}
     m_RemovedGameObjects: []
@@ -4602,6 +4610,10 @@ PrefabInstance:
     - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: MaxDistance
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8826,6 +8838,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
       value: 0.6037736
@@ -10456,6 +10472,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
       value: 0.16340333
@@ -11732,6 +11752,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1256165001591304622, guid: 10a0a80935c5da647b7491146641d273, type: 3}
     m_RemovedGameObjects: []
@@ -12554,6 +12578,10 @@ PrefabInstance:
     - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Volume
       value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
@@ -13678,6 +13706,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.08
       objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1256165001591304622, guid: 10a0a80935c5da647b7491146641d273, type: 3}
     m_RemovedGameObjects: []
@@ -13763,6 +13795,10 @@ PrefabInstance:
     - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Volume
       value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1256165001591304622, guid: 10a0a80935c5da647b7491146641d273, type: 3}
@@ -20484,6 +20520,10 @@ PrefabInstance:
     - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Volume
       value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950103895123024883, guid: 10a0a80935c5da647b7491146641d273, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6398887561697670505, guid: 10a0a80935c5da647b7491146641d273, type: 3}
       propertyPath: m_Color.b
