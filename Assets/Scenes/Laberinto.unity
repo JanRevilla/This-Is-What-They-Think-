@@ -3499,9 +3499,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3152777697199950959, guid: 8422e85c8228a7a4c8f7abec2310a1cb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.420442
+      objectReference: {fileID: 0}
     - target: {fileID: 7506064923922840453, guid: 8422e85c8228a7a4c8f7abec2310a1cb, type: 3}
       propertyPath: m_Name
       value: LaberintoPref
+      objectReference: {fileID: 0}
+    - target: {fileID: 8744096367304792142, guid: 8422e85c8228a7a4c8f7abec2310a1cb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.1399698
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
