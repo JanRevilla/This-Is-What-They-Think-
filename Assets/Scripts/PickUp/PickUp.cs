@@ -53,7 +53,7 @@ public class PickUp : MonoBehaviour
         {
             if (CollectorOfPickables.CANFALLING)
             {
-                if (_pickableObject == PickableObject.OnHands && Input.GetKey(KeyCode.Mouse0))
+                if (_pickableObject == PickableObject.OnHands && Input.GetKeyDown(KeyCode.Mouse0))
                     _itsFalling = true;
 
                 if (_itsFalling)
@@ -115,7 +115,7 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && Input.GetKey(KeyCode.Mouse0) && _pickableObject == PickableObject.OnGround)
+        if (other.tag == "Player" && Input.GetKeyDown(KeyCode.Mouse0) && _pickableObject == PickableObject.OnGround)
         {
             if(_target.transform.childCount == 0)
             {

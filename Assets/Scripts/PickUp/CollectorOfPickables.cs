@@ -127,7 +127,7 @@ public class CollectorOfPickables : MonoBehaviour
     {
         if (other.tag == "Player" && _target.transform.childCount > 0)
         {
-            if (_target.transform.GetChild(0).GetComponent<PickUp>().GetPickableObject() == PickableObject.OnHands && Input.GetKey(KeyCode.Mouse0))
+            if (_target.transform.GetChild(0).GetComponent<PickUp>().GetPickableObject() == PickableObject.OnHands && Input.GetKeyDown(KeyCode.Mouse0))
             {
                 _canAttach = true;
                 _pickableObject = _target.transform.GetChild(0).gameObject;
