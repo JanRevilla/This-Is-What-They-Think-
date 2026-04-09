@@ -93,8 +93,6 @@ public class PickUp : MonoBehaviour
         if (gameObject.scene.name == "DontDestroyOnLoad")
             SceneManager.MoveGameObjectToScene(gameObject, SceneManager.GetActiveScene());
 
-        transform.position += Vector3.down * _speed * Time.deltaTime;
-
         if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, _distanceToStop))
         {
             if (hit.collider.tag == "Ground")
@@ -103,6 +101,28 @@ public class PickUp : MonoBehaviour
                 _itsFalling = false;
                 GetComponent<MeshCollider>().enabled = true;
                 GetComponent<SphereCollider>().enabled = true;
+                return;
+            }
+        }
+        
+        transform.position += Vector3.down * _speed * Time.deltaTime;
+    }
+
+    private void FixFalling()
+    {
+        _itsFalling = false;
+
+        Vector3 rayOrigin = new Vector3(transform.position.x, 50f, transform.position.z);
+
+        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, 100f))
+        {
+            if(hit.collider.CompareTag("Ground"))
+            {
+                _pickableObject = PickableObject.OnGround;
+                GetComponent<MeshCollider>().enabled = true;
+                GetComponent<SphereCollider>().enabled = true;
+
+                transform.position = new Vector3(transform.position.x, hit.point.y + _distanceToStop, transform.position.z);
             }
         }
     }
@@ -122,5 +142,8 @@ public class PickUp : MonoBehaviour
                 PickUpObject();
             }
         }
+
+        if(other.tag == "FallingFix")
+            FixFalling();
     }
 }
