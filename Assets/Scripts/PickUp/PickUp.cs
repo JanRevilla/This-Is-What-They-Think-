@@ -54,7 +54,7 @@ public class PickUp : MonoBehaviour
             if (CollectorOfPickables.CANFALLING)
             {
                 if (_pickableObject == PickableObject.OnHands && Input.GetKeyDown(KeyCode.Mouse0))
-                    _itsFalling = true;
+                    ObjectPenetration();
 
                 if (_itsFalling)
                     MoveToGround();
@@ -95,7 +95,7 @@ public class PickUp : MonoBehaviour
 
         if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, _distanceToStop))
         {
-            if (hit.collider.tag == "Ground")
+            if (hit.collider.CompareTag("Ground"))
             {
                 _pickableObject = PickableObject.OnGround;
                 _itsFalling = false;
@@ -108,23 +108,29 @@ public class PickUp : MonoBehaviour
         transform.position += Vector3.down * _speed * Time.deltaTime;
     }
 
-    private void FixFalling()
+    private void ObjectPenetration()
     {
-        _itsFalling = false;
+        Vector3 rayOrigin = Vector3.zero;
 
-        Vector3 rayOrigin = new Vector3(transform.position.x, 50f, transform.position.z);
-
-        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, 100f))
+        for(int i = 0; i < _target.transform.parent.childCount; i++)
         {
-            if(hit.collider.CompareTag("Ground"))
+            if(_target.transform.parent.GetChild(i) != _target.transform)
             {
-                _pickableObject = PickableObject.OnGround;
-                GetComponent<MeshCollider>().enabled = true;
-                GetComponent<SphereCollider>().enabled = true;
-
-                transform.position = new Vector3(transform.position.x, hit.point.y + _distanceToStop, transform.position.z);
+                rayOrigin = _target.transform.parent.GetChild(i).GetChild(0).position;
+                break;
             }
         }
+
+        Vector3 dir = transform.position - rayOrigin;
+        float distance = dir.magnitude;
+        dir.Normalize();
+
+        if(Physics.Raycast(rayOrigin, dir, out RaycastHit hit, distance))
+        {
+            transform.position = hit.point + (hit.normal * 0.25f);
+        }
+
+        _itsFalling = true;
     }
 
     public PickableObject GetPickableObject() {  return _pickableObject; }
@@ -142,8 +148,5 @@ public class PickUp : MonoBehaviour
                 PickUpObject();
             }
         }
-
-        if(other.tag == "FallingFix")
-            FixFalling();
     }
 }
