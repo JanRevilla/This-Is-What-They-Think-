@@ -131,6 +131,7 @@ public class CollectorOfPickables : MonoBehaviour
             {
                 _canAttach = true;
                 _pickableObject = _target.transform.GetChild(0).gameObject;
+                _pickableObject.GetComponent<PickUp>().RemovePieceOfList();
                 _numOfPositionInList = _pickableObject.GetComponent<PickUp>().GetNameOfPickableObject();
             }
         }

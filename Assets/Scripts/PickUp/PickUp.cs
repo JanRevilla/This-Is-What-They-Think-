@@ -7,7 +7,8 @@ public enum PickableObject
 {
     OnGround = 0,
     OnHands,
-    OnSite
+    OnSite,
+    OnMove
 }
 
 public enum NameOfPickableObject
@@ -26,7 +27,8 @@ public enum NameOfPickableObject
 
 public class PickUp : MonoBehaviour
 {
-    bool _canMove = false;
+    public bool _canMove = false;
+    public bool _externForce = false;
     bool _itsFalling = false;
     GameObject _target;
     PickableObject _pickableObject = 0;
@@ -35,7 +37,7 @@ public class PickUp : MonoBehaviour
     private float _speed = 1.0f;
 
     [SerializeField]
-    private float _distanceToStop = 0.25f;
+    private float _distanceToStop = 0.5f;
 
     [SerializeField]
     private NameOfPickableObject _numOfPiece;
@@ -47,13 +49,13 @@ public class PickUp : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (_canMove)
+        if (_canMove && !_externForce)
             MoveToTarget();
         else
         {
             if (CollectorOfPickables.CANFALLING)
             {
-                if (_pickableObject == PickableObject.OnHands && Input.GetKeyDown(KeyCode.Mouse0))
+                if ((_pickableObject == PickableObject.OnHands && Input.GetKeyDown(KeyCode.Mouse0)) || _externForce)
                     ObjectPenetration();
 
                 if (_itsFalling)
@@ -75,6 +77,11 @@ public class PickUp : MonoBehaviour
 
     void MoveToTarget()
     {
+        if(_pickableObject != PickableObject.OnMove)
+        {
+            _pickableObject = PickableObject.OnMove;
+        }
+
         transform.position += (_target.transform.position - transform.position).normalized * _speed * Time.deltaTime;
 
         if(_distanceToStop > (_target.transform.position - transform.position).magnitude)
@@ -97,6 +104,7 @@ public class PickUp : MonoBehaviour
         {
             if (hit.collider.CompareTag("Ground"))
             {
+                _target.GetComponent<CheckPivot>().RemovePiece();
                 _pickableObject = PickableObject.OnGround;
                 _itsFalling = false;
                 GetComponent<MeshCollider>().enabled = true;
@@ -131,7 +139,10 @@ public class PickUp : MonoBehaviour
         }
 
         _itsFalling = true;
+        _externForce = false;
     }
+
+    public void RemovePieceOfList() => _target.GetComponent<CheckPivot>().RemovePiece();
 
     public PickableObject GetPickableObject() {  return _pickableObject; }
 
@@ -143,7 +154,7 @@ public class PickUp : MonoBehaviour
     {
         if (other.tag == "Player" && Input.GetKeyDown(KeyCode.Mouse0) && _pickableObject == PickableObject.OnGround)
         {
-            if(_target.transform.childCount == 0)
+            if (_target.GetComponent<CheckPivot>().TryPickUp(gameObject))
             {
                 PickUpObject();
             }

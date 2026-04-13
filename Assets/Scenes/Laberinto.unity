@@ -6241,8 +6241,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0a348ec5a22054da2c89270dbe1ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
+  _canMove: 0
+  _externForce: 0
   _speed: 6
-  _distanceToStop: 0.25
+  _distanceToStop: 0.5
   _numOfPiece: 0
 --- !u!64 &902812255
 MeshCollider:
@@ -13816,8 +13818,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0a348ec5a22054da2c89270dbe1ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
+  _canMove: 0
+  _externForce: 0
   _speed: 6
-  _distanceToStop: 0.25
+  _distanceToStop: 0.5
   _numOfPiece: 2
 --- !u!64 &5699692839938987728
 MeshCollider:
@@ -14020,8 +14024,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0a348ec5a22054da2c89270dbe1ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
+  _canMove: 0
+  _externForce: 0
   _speed: 6
-  _distanceToStop: 0.25
+  _distanceToStop: 0.5
   _numOfPiece: 3
 --- !u!64 &6273958152492490031
 MeshCollider:
@@ -14190,8 +14196,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0a348ec5a22054da2c89270dbe1ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
+  _canMove: 0
+  _externForce: 0
   _speed: 6
-  _distanceToStop: 0.25
+  _distanceToStop: 0.5
   _numOfPiece: 4
 --- !u!64 &6862989074383762234
 MeshCollider:
@@ -14394,8 +14402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0a348ec5a22054da2c89270dbe1ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
+  _canMove: 0
+  _externForce: 0
   _speed: 6
-  _distanceToStop: 0.25
+  _distanceToStop: 0.5
   _numOfPiece: 1
 --- !u!64 &8318154103149177979
 MeshCollider:
@@ -14571,8 +14581,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0a348ec5a22054da2c89270dbe1ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUp
+  _canMove: 0
+  _externForce: 0
   _speed: 6
-  _distanceToStop: 0.25
+  _distanceToStop: 0.5
   _numOfPiece: 5
 --- !u!64 &8746204564819508065
 MeshCollider:
